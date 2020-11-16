@@ -6,17 +6,64 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Luke Stephens | Portfolio</title>
  
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js">
-    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.5.1.js"> -->
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/styling/styles.css">
+    <link rel="stylesheet" href="/styling/laptop.css">
+    <link rel="stylesheet" href="/styling/erin.css">
+    <link rel="stylesheet" href="/styling/fom.css">
+    <link rel="stylesheet" href="/styling/insta.css">
+    <link rel="stylesheet" href="/styling/web.css">
+    <link rel="stylesheet" href="/styling/erin-cam.css">
+    <link rel="stylesheet" href="/styling/blinki.css">
+    <link rel="stylesheet" href="/styling/desolation.css">
+    <link rel="stylesheet" href="/styling/acid.css">
+    <link rel="stylesheet" href="/styling/show.css">
 
+
+    <!-- Links -->
+    <link rel="preconnect/stylesheet" href="https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
+    <link rel="icon" 
+    type="image/png" 
+    href="/Images/png/favicon.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- fonts -->
+
+
+
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/85180d8769.js" crossorigin="anonymous"></script>
+    <script rel="preconnect/javascript" src="/js/lottie.js" type="text/javascript"></script>
+    <script src="/js/animationPlayer.js" type="text/javascript"></script>
+    <script rel="preconnect/javascript" src="/js/videoplay.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    
+    
+    
+
+
+
+    <!-- Hotjar Tracking Code for https://lukestephens.co.za -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2084380,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+
+    
+ 
 
 </head>
-<body>
+<body onload="setFrames(),loadVolume(),setTime()">
 
     <div id="main">
 
@@ -26,34 +73,63 @@
         <div class="l-con">
             <ul class="nav-list" id="l-list">
                 <li id="find-me-here"><p>find me here:</p></li>
-                <li><img src="/Images/Icons/icon-linkedin.svg" alt=""></li>
-                <li><img src="/Images/Icons/icon-behance.svg" alt=""></li>
-                <li><img src="/Images/Icons/icon-dribbble.svg" alt=""></li>
+
+                <a target="_blank" href="https://www.linkedin.com/in/luke-stephens-za/">
+                    <li><i id="linked" class="fab fa-linkedin"></i></li>
+                </a>
+
+                <a target="_blank" href="https://www.behance.net/lukestephens">
+                    <li><i id="behan" class="fab fa-behance-square"></i></li>  
+                </a> 
+
+                <a target="_blank" href="https://dribbble.com/LukeStephens">
+                    <li><i id="drib" class="fab fa-dribbble-square"></i></li>
+                </a> 
             </ul>
         </div>
         <!-- Right Nav Bar -->
         <div class="r-con">
             <ul class="nav-list">
-                <li><p>about.</p></li>
-                <li><p>blog.</p></li>
-                <li><p>projects.</p></li>
+
+                <li onclick="showAbout()">
+                    <p>about.</p>
+                </li>
+
+                <li>
+                    <a target="_blank" href="https://luestephens.wordpress.com/">
+                        <p>blog.</p>
+                    </a>
+                </li>
+
+                <li>
+                   <p onclick="showHide()">projects.</p>
+                </li>
             </ul>
         </div>
     </div>
     <!-- Nav Bar END -->
 
+    <!-- back to top -->
+    <div class="BtoP-con" onclick="topFunction()">
+        <div class="BtoP">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+        <div class="btp-word"><p>Back to top!</p></div>
+    </div>
+    <!-- back to top end -->
+
 
 
     <!-- Intro START -->
-    <div class="intro">
+    <div id="intro-header" class="intro">
         <!-- Intro left -->
         <div class="l-intro">
-            <h1>hi.</h1>
+            <div id="ani17"></div>
         </div>
         <!-- Intro right -->
         <div class="r-intro">
             <div class="intro-img">
-                <img src="/Images/Character/stand.svg" alt="">
+                <img loading="lazy"  src="/Images/Character/stand.svg" alt="">
             </div>
             <div class="intro-back-circle"></div>
         </div>
@@ -63,7 +139,7 @@
 
 
     <!-- Work Start -->
-    <div class="work-main">
+    <div  id="work-con" class="work-main">
         <!-- work title -->
         <div class="work-title">
             <!-- title -->
@@ -78,7 +154,7 @@
             <div id="row-1">
 
                 <!-- row 1 left side -->
-                <div data-tilt data-tilt-perspective="3000" data-tilt-glare="true" data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d 
+                <div data-aos="fade-right" onclick="project1(),showHide(),topFunction()" data-tilt data-tilt-perspective="3000"  data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d 
                 class="row1-left">
                     <div transform: translateZ(50px) class="c-title"><h1>erin.</h1></div>
                     <div transform: translateZ(50px) class="c-sub" id="c-sub-l"><i class="fas fa-mobile"></i>&nbsp<p>Mobile Application Design.</p></div>
@@ -86,9 +162,9 @@
                 </div>
 
                 <!-- row 1 right side -->
-                <div  data-tilt data-tilt-perspective="3000" data-tilt-glare="true" data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d  
+                <div data-aos="fade-left" onclick="project2(),showHide(),topFunction()" data-tilt data-tilt-perspective="3000"  data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d  
                 class="row1-right">
-                    <div transform: translateZ(50px) style="font-size: 25px; line-height: 28px;" class="c-title"><h1>freedom  of <br><br> movement.</h1></div>
+                    <div transform: translateZ(50px) id="fom-title" class="c-title"><h1>freedom  of <br><br> movement.</h1></div>
                     <div transform: translateZ(50px) class="c-sub" id="c-sub-l"><i class="fas fa-photo-video"></i>&nbsp<p>Social Media.</p></div>
                     <div transform: translateZ(50px) class="c-sub" id="c-sub-r"><h1>#2</h1></div>
                 </div>
@@ -97,9 +173,9 @@
             <div id="row-2">
 
                 <!-- row 2 left side -->
-                <div data-tilt data-tilt-perspective="3000" data-tilt-glare="true" data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d  
+                <div data-aos="fade-right" onclick="project3(),showHide(),topFunction()" data-tilt data-tilt-perspective="3000"  data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d  
                 class="row2-left">
-                    <div transform: translateZ(50px) style="height: 95%" class="c-title"><h1>insta famous.</h1></div>
+                    <div transform: translateZ(50px) style="height: 95%" id="insta-title" class="c-title"><h1>insta famous.</h1></div>
                     <div transform: translateZ(50px) style="height: 5%" class="c-sub" id="c-sub-l"><i class="fas fa-draw-polygon"></i>&nbsp<p>Animation.</p></div>
                     <div transform: translateZ(50px) style="height: 5%" class="c-sub" id="c-sub-r"><h1>#3</h1></div>
                 </div>   
@@ -109,17 +185,17 @@
                     <div class="r2-top">
 
                 <!-- row 2 top left -->
-                        <div data-tilt data-tilt-perspective="3000" data-tilt-glare="true" data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d  
+                        <div data-aos="fade-up" onclick="project4(),showHide(),topFunction()" data-tilt data-tilt-perspective="3000"  data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d  
                         class="r2-top-left">
-                            <div transform: translateZ(50px) style="font-size: 25px;line-height: 28px;" class="c-title"><h1>experimental <br><br> website.</h1></div>
+                            <div transform: translateZ(50px) id="exp-web-title" class="c-title"><h1>experimental <br><br> website.</h1></div>
                             <div transform: translateZ(50px) class="c-sub" id="c-sub-l"><i class="far fa-window-maximize"></i>&nbsp<p>Web Design.</p></div>
                             <div transform: translateZ(50px) class="c-sub" id="c-sub-r"><h1>#4</h1></div>
                         </div>
 
                 <!-- ROW 2 TOP RIGHT -->
-                        <div data-tilt data-tilt-perspective="3000" data-tilt-glare="true" data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d  
+                        <div data-aos="fade-left" onclick="project5(),showHide(),topFunction()" data-tilt data-tilt-perspective="3000"  data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d  
                         class="r2-top-right">
-                            <div transform: translateZ(50px) style="font-size: 30px;line-height: 32px;" class="c-title"><h1>acid mage.</h1></div>
+                            <div transform: translateZ(50px) id="acid-card-title" class="c-title"><h1>acid mage.</h1></div>
                             <div transform: translateZ(50px) class="c-sub" id="c-sub-l"><i class="fas fa-gamepad"></i>&nbsp<p>Game Design.</p></div>
                             <div transform: translateZ(50px) class="c-sub" id="c-sub-r"><h1>#5</h1></div>
                         </div> 
@@ -127,18 +203,18 @@
                     <div class="r2-bottom">
                         
                         <!-- row 2 bottom left -->
-                        <div data-tilt data-tilt-perspective="3000" data-tilt-glare="true" data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d  
+                        <div data-aos="fade-up" onclick="project6(),showHide(),topFunction()" data-tilt data-tilt-perspective="3000"  data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d  
                         class="r2-bottom-left">
-                            <div transform: translateZ(50px) style="font-size: 25px;line-height: 28px;" class="c-title"><h1>erin campaign video.</h1></div>
-                            <div transform: translateZ(50px) class="c-sub" id="c-sub-l"><i class="fas fa-draw-polygon"></i>&nbsp<p>Animation.</p></div>
-                            <div transform: translateZ(50px) class="c-sub" id="c-sub-r"><h1>#6</h1></div>
+                        <div transform: translateZ(50px) id="deso-title" class="c-title"><h1>desolation diaries.</h1></div>
+                        <div transform: translateZ(50px) class="c-sub" id="c-sub-l"><i class="fas fa-film"></i>&nbsp<p>Short Film.</p></div>
+                        <div transform: translateZ(50px) class="c-sub" id="c-sub-r"><h1>#6</h1></div>
                         </div>
                         
                         <!-- row 2 bottom right  -->
-                        <div data-tilt data-tilt-perspective="3000" data-tilt-glare="true" data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d
+                        <div data-aos="fade-up" onclick="project7(),showHide(),topFunction()" data-tilt data-tilt-perspective="3000"  data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d
                         class="r2-bottom-right">
-                            <div transform: translateZ(50px) style="font-size: 25px;line-height: 28px;" class="c-title"><h1>erin campaign video.</h1></div>
-                            <div transform: translateZ(50px) class="c-sub" id="c-sub-l"><p>Social Media.</p></div>
+                            <div transform: translateZ(50px) id="blinki-title" class="c-title"><h1>The Blinki and Sqeeki Show.</h1></div>
+                            <div transform: translateZ(50px) class="c-sub" id="c-sub-l"><i class="fas fa-draw-polygon"></i>&nbsp<p>Animation.</p></div>
                             <div transform: translateZ(50px) class="c-sub" id="c-sub-r"><h1>#7</h1></div>
                         </div>
 
@@ -147,21 +223,13 @@
             </div>
             <!-- row 3 -->
             <div id="row-3">
-                
-                <!-- row 3 left -->
-                <div data-tilt data-tilt-perspective="3000" data-tilt-glare="true" data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d
-                class="r3-left">
-                    <div transform: translateZ(50px) style="font-size: 30px;line-height: 28px;" class="c-title"><h1>desolation diaries.</h1></div>
-                    <div transform: translateZ(50px) class="c-sub" id="c-sub-l"><i class="fas fa-film"></i>&nbsp<p>Short Film.</p></div>
-                    <div transform: translateZ(50px) class="c-sub" id="c-sub-r"><h1>#8</h1></div>
-                </div>
-
+            
                 <!-- row 3 right -->
-                <div data-tilt data-tilt-perspective="3000" data-tilt-glare="true" data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d
+                <div data-aos="fade-up" onclick="project8(),showHide(),topFunction()" data-tilt data-tilt-perspective="3000"  data-tilt-scale="0.9" data-tilt-speed="400" data-tilt-transform-style: preserve-3d
                 class="r3-right">
-                    <div transform: translateZ(50px) style="font-size: 30px;line-height: 28px;" class="c-title"><h1>2020 showreel.</h1></div>
+                    <div transform: translateZ(50px) id="showreel-title" class="c-title"><h1>2020 showreel.</h1></div>
                     <div transform: translateZ(50px) class="c-sub" id="c-sub-l"><i class="fas fa-video"></i>&nbsp<p>Showreel.</p></div>
-                    <div transform: translateZ(50px) class="c-sub" id="c-sub-r"><h1>#9</h1></div>
+                    <div transform: translateZ(50px) class="c-sub" id="c-sub-r"><h1>#8</h1></div>
                 </div>
 
             </div>
@@ -173,7 +241,7 @@
 
 
     <!-- contact start -->
-    <div class="contact-main">
+    <div data-aos="fade-up" id="contact-con" class="contact-main">
         <!-- contact title -->
         <div class="contact-title">
             <!-- title -->
@@ -183,19 +251,2839 @@
             <div class="contact-line"></div>
         </div>
         <!-- contact section -->
-        <div id="contact-me"></div>
+        <div id="contact-me">
+            <div class="contact-l">
+                <form target="_blank"  method="post" enctype="text/plain" id="form">
+
+                    <div class="contact-name">
+                        <h1 class="form-title">your name.</h1>
+                        <input type="text" name="name" id="name">
+                    </div>
+
+
+                    <div class="contact-mail">
+                        <h1 class="form-title">your email.</h1>
+                        <input type="text" name="mail" id="mail"><br>
+                    </div>
+
+                    <div class="contact-comment">
+                        <h1 class="form-title">your message</h1>
+                        <input type="text" name="comment" size="50" id="comment">
+                    </div>
+                    
+                    <input type="submit" value="Send" id="send">
+                    </form>
+            </div>
+
+            <div class="contact-l" id="contact-info">
+                <div class="contact-email-add">
+                    <h1>email address.</h1>
+                    <p>imahowiie@gmail.com</p>
+                </div>
+
+                <div class="contact-email-add">
+                    <h1>phone number.</h1>
+                    <p>+27 082 629 7259</p>
+                </div>
+
+                <div class="contact-email-add">
+                    <h1>social media</h1>
+                        <ul class="nav-list" id="l-list">
+        
+                            <a target="_blank" href="https://www.linkedin.com/in/luke-stephens-za/">
+                                <li><i id="linkedC" class="fab fa-linkedin"></i></li>
+                            </a>
+            
+                            <a target="_blank" href="https://www.behance.net/lukestephens">
+                                <li><i id="behanC" class="fab fa-behance-square"></i></li>  
+                            </a> 
+            
+                            <a target="_blank" href="https://dribbble.com/LukeStephens">
+                                <li><i id="dribC" class="fab fa-dribbble-square"></i></li>
+                            </a> 
+                        </ul>
+                </div>
+
+            </div>
+
+        </div>
     </div>
     <!-- contact end -->
 
+
+
     <!-- copyright start -->
-    <div class="copyright">
+    <div  id="copyright" class="copyright">
         <p>Luke Stephens © 2020</p>
     </div>
     <!-- copyright end -->
 
+
+
+    <!-- Project1 START -->
+    <div id="project1" class="projects" style="display: none;">
+        <!-- projects header -->
+        <div class="project-header">
+            <!-- project header left button -->
+            <div class="ph-LB" onclick="showHide(),topFunction(),autoPlay()">
+                <div class="l-button"><i class="fas fa-chevron-left"></i></div>
+            </div>
+            <!-- project left header -->
+            <div class="ph-L">
+                <div class="ph-L-title"><h1>Erin</h1></div>
+                <div class="ph-L-subtext">
+                    <p>A mobile application designed for <br><br>
+                    bettering the relationship with device usage.</p></div>
+            </div>
+
+            <!-- project right image -->
+            <div class="ph-R"></div>
+            
+            <!-- project right button -->
+            <div class="ph-RB" >
+                <div class="r-button" onclick="showProject2(),autoPlay()"><i class="fas fa-chevron-right"></i></div>
+            </div>
+
+        </div>
+        <!-- project header end -->
+
+
+        <!-- project tags -->
+        <div data-aos="fade-left" class="project-tags">
+            <p>#UX &nbsp #UI &nbsp #ANIMATION</p>
+        </div>
+        <!-- project tags end -->
+
+
+        <!-- project info -->
+        <div class="project-info">
+            <!-- project info left -->
+            <div class="pi-l">
+
+                <div data-aos="fade-right" >
+                    <h1>The Problem</h1>
+                    <p>
+                    3.5 billion humans use cell phones which amounts to 45% of the world population. The average person that falls into the 45% checks their phone 30 times a week and spends just over an hour on social media a day, This statistic is linked with a 2.7% more likely hood of mental health issues. 
+                    </p>
+                </div>
+
+                <div data-aos="fade-right">
+                    <h1>The Brief</h1>
+                    <p>Conceptualise and design a universal accessible app for your chosen brand and problem.</p>
+                </div>
+
+                <div data-aos="fade-right">
+                    <h1>The Solution</h1>
+                    <p>
+                        It is a cumulative role of application Developers and User Experience engineers to solve this problem in a human cantered way, The problem needs to be addressed in a way that is positive reinforcing and retains users to keep screen time down. The Proposed solution is to create a cell phone application that tracks users app screen time along with their emotional triggers via facial recognition and HRV scanning. This will allow for notifications to be pushed to the user about their emotional triggers for the duration of application use. The app will address the issues linked to phone use and mental health issues in the current and the future with invaluable data about how user's applications make them feel.
+                        
+                    </p>
+                </div>
+
+                <div data-aos="fade-right">
+                    <h1>The Intended Audience</h1>
+                    <p>
+                        mobile app users
+                    </p>
+                </div>
+            </div>
+
+            <!-- project info right -->
+            <div data-aos="fade-left" class="pi-r">
+                <img loading="lazy"  src="/Images/png/erin-phone2.png" alt="">
+            </div>
+
+        </div>
+        <!-- project info end -->
+
+        <div data-aos="fade-up" class="title-con" id="personas-title">
+
+            <div  class="title-header">
+                <h1>app personas</h1>
+                <p>App personas are important to the app creation process as it helps define the user journey and flow.</p>
+            </div>
+
+            <div class="p-whiteout"></div>
+            <div class="bluebar"></div>
+
+        </div>
+
+        <!-- app personas -->
+        <div data-aos="fade-up" class="personas">
+
+
+
+            <div class="p-image" > <!-- should move when mouse moved-->
+                <img loading="lazy"   src="/Images/png/persona1.png" alt="" id="imgone">
+            </div>
+            
+            <div class="p-image" >
+                <img loading="lazy"  src="/Images/png/persona3.png" alt="" id="imgtwo">
+            </div>
+
+            
+            <div  class="p-image">
+                <img loading="lazy"  src="/Images/png/persona2.png" alt="" id="imgtwo">
+            </div>
+
+        </div>
+        <!-- app personas end -->
+
+            <!-- user flow title -->
+            <div data-aos="fade-up" class="title-con" id="personas-title">
+                <div class="title-header">
+                    <h1>user flow</h1>
+                    <p>Understanding the user flow allows for faster generation of UI and UX elements as the navigation of the app is already defined.</p>
+                </div>
+
+                <div class="p-whiteout"></div>
+                <div class="bluebar"></div>
+            </div>
+            <!-- user flow title end -->
+
+        <!-- app user flow -->
+        <div data-aos="fade-up" class="userFlow" id="personas-title">
+
+
+
+            <div class="userFlow-img">
+                <img loading="lazy"  src="/Images/png/userflow.png" alt="">
+            </div>
+
+        </div>
+        <!-- app user flow END-->
+
+
+
+        <!-- on boarding title -->
+        <div  data-aos="fade-up" class="title-con" id="personas-title">
+            <div  class="title-header">
+                <h1>on boarding</h1>
+                <p>Familiarise the user with the objectives of the app in an informative and easy to digest manner.</p>
+            </div>
+
+            <div class="p-whiteout"></div>
+            <div class="bluebar"></div>
+        </div>
+        <!-- on boarding title end -->
+        <!-- on boarding -->
+        <div class="onboarding">
+
+            <!-- row 1 -->
+            <div data-aos="fade-up" class="ob-1">
+    
+                <div  class="row-explainer">
+                    <h1>Slow down</h1>
+                    <p>Slowing down the on boarding process allows for users to be less bombarded by information.</p>
+                </div>
+                <div data-aos="fade-up"  class="row-image" onmouseover="play1()" onmouseout="stop1()" >
+                    <div id="ani1" class="anim-layer"></div>
+                </div>
+                <div data-aos="fade-up" class="row-image" onmouseover="play2()" onmouseout="stop2()">
+                    <div id="ani2" class="anim-layer"></div>
+                </div>
+                <div data-aos="fade-up" class="row-image" onmouseover="play3()" onmouseout="stop3()">
+                    <div id="ani3" class="anim-layer"></div>
+                </div>
+
+            </div>
+            <!-- row 2 -->
+            <div data-aos="fade-up" class="ob-2">
+
+                <div class="row-explainer">
+                    <h1>Using imagery</h1>
+                    <p>Imagery used as a mode of explanation allows for difficult concepts to be digested in a manner that is friendly and rememberable.</p>
+                </div>
+                <div class="row-image" onmouseover="play4()" onmouseout="stop4()">
+                    <div id="ani4" class="anim-layer"></div>
+                </div>
+                <div class="row-image" onmouseover="play5()" onmouseout="stop5()">
+                    <div id="ani5" class="anim-layer"></div>
+                </div>
+                <div class="row-image" onmouseover="play6()" onmouseout="stop6()">
+                    <div id="ani6" class="anim-layer"></div>
+                </div>
+
+            </div>
+        </div>
+        <!-- on boarding END-->
+
+        <!-- scanning  -->
+        <!-- scanning title -->
+        <div data-aos="fade-up" class="title-con" id="personas-title">
+            <div class="title-header">
+                <h1>scanning setup</h1>
+                <p>Ask the user to connect their camera and health device to the app in order to collect sufficient information.</p>
+            </div>
+
+            <div class="p-whiteout"></div>
+            <div class="bluebar"></div>
+        </div>
+        <!-- scanning title end -->
+            <!-- row 1 -->
+            <div data-aos="fade-up" class="ob-1">
+
+                <div class="row-explainer">
+                    <h1>Inform</h1>
+                    <p>Inform the user on how their personal data will be used. <br><br> Specifically important for features that a user may feel privacy concerns towards.<p>
+                </div>
+                <div class="row-image">
+                    <img loading="lazy"  src="/Images/png/scan1.png" alt="">
+                </div>
+                <div class="row-image" onmouseover="play7()" onmouseout="stop7()">
+                    <div id="ani7" class="anim-layer"></div>
+                </div>
+                <div class="row-image" onmouseover="play8()" onmouseout="stop8()">
+                    <div id="ani8" class="anim-layer"></div>
+                </div>
+
+            </div>
+            <!-- row 2 -->
+            <div data-aos="fade-up" class="ob-2">
+
+                <div class="row-explainer">
+                    <h1>Visually communicate</h1>
+                    <p>Users may not know what a 'health device' is, using visuals to support this word makes the connection for the user.</p>
+                </div>
+                <div class="row-image">
+                    <img loading="lazy"  src="/Images/png/scan4.png" alt="">
+                </div>
+                <div class="row-image" onmouseover="play9()" onmouseout="stop9()">
+                    <div id="ani9" class="anim-layer"></div>
+                </div>
+                <div class="row-image" onmouseover="play10()" onmouseout="stop10()">
+                    <div id="ani10" class="anim-layer"></div>
+                </div>
+
+            </div>
+        <!-- scanning  END-->
+
+
+        <!-- sign up -->
+        <!-- sign up title -->
+        <div data-aos="fade-up" class="title-con" id="personas-title">
+            <div class="title-header">
+                <h1>sign up</h1>
+                <p>Collect the user information that is necessary to assign the user to the database.</p>
+            </div>
+
+            <div class="p-whiteout"></div>
+            <div class="bluebar"></div>
+        </div>
+        <!-- sign up title end -->
+        <!-- row 1 -->
+        <div data-aos="fade-up" class="ob-1">
+
+            <div class="row-explainer">
+                <h1>Breakage</h1>
+                <p>By breaking apart the account creation or sign up inputs, the user is void of having to make a decision. One input box allows for one answer.</p>
+            </div>
+            <div class="row-image" onmouseover="play11()" onmouseout="stop11()">
+                <div id="ani11" class="anim-layer"></div>
+            </div>
+            <div class="row-image" onmouseover="play12()" onmouseout="stop12()">
+                <div id="ani12" class="anim-layer"></div>
+            </div>
+            <div class="row-image" onmouseover="play13()" onmouseout="stop13()">
+                <div id="ani13" class="anim-layer"></div>
+            </div>
+
+        </div>
+        <!-- sign up END -->
+
+
+
+        <!-- home screen -->
+        <div data-aos="fade-up" class="home-con">
+            <div class="home-explain">
+                <h1>app home screen</h1>
+                <p>This is the screen the user will load into either after login or sign up. <br><br> 
+                    The user can access the most necessary pages by swiping left or right or using the navigation bar at the bottom. <br> <br> 
+                    additional settings can be accessed by the hamburger menu in the top right.</p>
+            </div>
+            <div class="home-img-con" onmouseover="play14()" onmouseout="stop14()">
+                <div id="ani14" class="anim-layer-large"></div>
+            </div>
+            <div class="home-cards">
+                <img loading="lazy"  src="/Images/png/stats.png" alt="">
+                <img loading="lazy"  src="/Images/png/home.png" alt="">
+                <img loading="lazy"  src="/Images/png/noti.png" alt="">
+            </div>
+
+            <div class="backblue"></div>
+        </div>
+        <!-- home screen END -->
+
+        <!-- stats screen -->
+        <div data-aos="fade-up" class="stats-con">
+
+            <div class="stats-explain">
+                <h1>statistics screen</h1>
+                <p>Users will be able to see all their app activity within this screen. <br><br> 
+                    app statistics are split into groups under 3 periodic terms: <br><br> daily, weekly and monthly. <br><br>
+                    This allows users to keep track of their app use while being able to see if they have made the progress they want.</p>
+            </div>
+
+            <div class="home-img-con" onmouseover="play15()" onmouseout="stop15()">
+                <div id="ani15" class="anim-layer-large"></div>
+            </div>
+        </div>
+        <!-- stats screen END-->
+
+        <!-- noti screen -->
+        <div data-aos="fade-up" class="noti-con">
+
+            <div class="noti-explain">
+                <h1>notifications screen</h1>
+                <p>The notifications screens allows users to see what up-coming notifications they have while showing users the time remaining they have left on their app and app groups. <br><br>
+                    These notifications can be set via the notifications tab in the ham burger menu.</p>
+            </div>
+
+            <div class="home-img-con" onmouseover="play16()" onmouseout="stop16()">
+                <div id="ani16" class="anim-layer-large"></div>
+            </div>
+
+            <div class="blackblue2"></div>
+        </div>
+        <!-- noti screen END-->
+
+        <!-- account settings title -->
+        <div data-aos="fade-up" class="title-con" id="personas-title">
+            <div class="title-header">
+                <h1>account settings</h1>
+                <p>Allow the user to edit their account settings.</p>
+            </div>
+
+            <div class="p-whiteout"></div>
+            <div class="bluebar"></div>
+        </div>
+        <!-- account settings end -->
+        <!-- row 1 -->
+        <div data-aos="fade-up" class="ob-1">
+
+            <div class="row-explainer">
+                <h1>Account</h1>
+                <p>Allow users to edit their personal information such as: <br> <br>
+                    account name, email address and password.</p>
+            </div>
+            <div class="row-image">
+                <img loading="lazy"  src="/Images/png/menuOpen.png" alt="">
+            </div>
+            <div class="row-image">
+                <img loading="lazy"  src="/Images/png/accSettings.png" alt="">
+            </div>
+            <div class="row-image">
+                <img loading="lazy"  src="/Images/png/accEdit.png" alt="">
+            </div>
+
+        </div>
+        <!-- row 1 end -->
+
+        <!-- device settings title -->
+        <div data-aos="fade-up" class="title-con" id="personas-title">
+            <div class="title-header">
+                <h1>device settings</h1>
+                <p>Allow the user to choose their health device preferences.</p>
+            </div>
+
+            <div class="p-whiteout"></div>
+            <div class="bluebar"></div>
+        </div>
+        <!-- device settings end -->
+        <!-- row 1 -->
+        <div data-aos="fade-up" class="ob-1">
+
+            <div class="row-explainer">
+                <h1>Device</h1>
+                <p>Allow the user to toggle HRV scanning and device notifications.</p>
+            </div>
+            <div class="row-image">
+                <img loading="lazy"  src="/Images/png/menuOpen.png" alt="">
+            </div>
+            <div class="row-image">
+                <img loading="lazy"  src="/Images/png/deviceSettings.png" alt="">
+            </div>
+            <div class="row-image">
+                <img loading="lazy"  src="/Images/png/deviceEdit.png" alt="">
+            </div>
+
+        </div>
+        <!-- row 1 end -->
+
+
+        <!-- notifications settings title -->
+        <div data-aos="fade-up" class="title-con" id="personas-title">
+            <div class="title-header">
+                <h1>notifications settings</h1>
+                <p>Allow the user to create their specified notifications.</p>
+            </div>
+
+            <div class="p-whiteout" id="whiteout-noti"></div>
+            <div class="bluebar"></div>
+        </div>
+        <!-- notifications settings end -->
+        <!-- row 1 -->
+        <div data-aos="fade-up" class="ob-1">
+
+            <div class="row-explainer">
+                <h1>Notifications</h1>
+                <p>The user is able to create specific notifications for apps as well as having the ability to create notifications for entire app groups.</p>
+            </div>
+            <div class="row-image">
+                <img loading="lazy"  src="/Images/png/menuOpen.png" alt="">
+            </div>
+            <div class="row-image">
+                <img loading="lazy"  src="/Images/png/notiSettings.png" alt="">
+            </div>
+            <div class="row-image">
+                <img loading="lazy"  src="/Images/png/notiEdit.png" alt="">
+            </div>
+
+        </div>
+        <!-- row 1 end -->
+
+        <!-- style guide title -->
+        <div data-aos="fade-up" class="title-con" id="personas-title">
+            <div class="title-header">
+                <h1>style guide</h1>
+                <p>Allow the user to edit their account settings.</p>
+            </div>
+
+            <div class="p-whiteout"></div>
+            <div class="bluebar"></div>
+        </div>
+        <!-- style guide end -->
+        <!-- row 1 -->
+        <div data-aos="fade-up" class="ob-1" id="style-guide">
+
+            <div class="style-image">
+                <img loading="lazy"  src="/Images/png/colours.png" alt="">
+            </div>
+            <div class="style-image">
+                <img loading="lazy"  src="/Images/png/icon.png" alt="">
+            </div>
+        </div>
+        <!-- row 1 end -->
+
+        <!-- case study -->
+            <div data-aos="fade-up" class="case-con">
+
+            <div class="case-heading">
+                <h1>Case Study</h1>
+                <p>Watch the case study of the mobile application Erin to learn more about the application and how it works.</p>
+            </div>
+
+            <div class="laptop-con">
+                <div id="laptop" class="container">
+                    <div class="mockup mockup-macbook loaded opened">
+                      <div class="part top">
+                        <img loading="lazy"  src="/Images/svg/macbook-top.svg" alt="" class="top">
+                        <img loading="lazy"  src="/Images/svg/macbook-cover.svg" alt="" class="cover">
+                  
+                        <video preload="none" controls  poster="/Images/png/poster/erin.png">
+                          <source  src="/Videos/1/erin.mp4" type="video/mp4">
+                        </video>
+                      </div>
+                      <div class="part bottom">
+                        <img loading="lazy"  src="/Images/svg/macbook-cover.svg" alt="" class="cover">
+                        <img loading="lazy"  src="/Images/svg/macbook-bottom.svg" alt="" class="bottom">
+                      </div>
+                    </div>
+
+                  </div>
+            </div>    
+
+
+            <div class="case-back"></div>
+
+            </div>
+        <!-- case study END-->
+
+        <!-- view more -->
+        <div  class="view-more">
+            <a target="_blank" href="https://lukestephens-2f9c9.web.app/event-one"><h1>view more</h1></a>
+        </div>
+        <!-- view more END -->
+
+    </div>
+    <!-- Project 1 End -->
+
+
+
+    <!-- Project2 START -->
+    <div id="project2" class="projects" style="display: none;">
+        <!-- projects header -->
+        <div class="project-header">
+            <!-- project header left button -->
+            <div class="ph-LB" onclick="showProject1(), topFunction(),autoPlay()">
+                <div class="l-button"><i class="fas fa-chevron-left"></i></div>
+            </div>
+            <!-- project left header -->
+            <div class="FM-ph-L">
+                <div class="ph-L-title" id="fom-title"><h1>Freedom of Movement</h1></div>
+                <div class="ph-L-subtext">
+                    <p>A social media campaign for Freedom of Movement.</p></div>
+            </div>
+
+            <!-- project right image -->
+            <div class="FM-ph-R" id="fom-header-right-image"></div>
+            
+            <!-- project right button -->
+            <div class="ph-RB">
+                <div class="r-button" onclick="showProject3(),autoPlay()"><i class="fas fa-chevron-right"></i></div>
+            </div>
+
+        </div>
+        <!-- project header end -->
+
+
+        <!-- project tags -->
+        <div data-aos="fade-left" class="project-tags" id="fom-tags">
+            <p>#SOCIALMEDIA &nbsp #CAMPAIGN &nbsp #ANIMATION</p>
+        </div>
+        <!-- project tags end -->
+
+
+        <!-- project info -->
+        <div data-aos="fade-right" class="project-info">
+            <!-- project info left -->
+            <div class="pi-l">
+
+                <div>
+                    <h1>The Problem</h1>
+                    <p>
+                        Freedom of Movement would like to stregnthen their online presence through video and motion graphic content for their products and lifestyle.
+                    </p>
+                </div>
+
+                <div>
+                    <h1>The Brief</h1>
+                    <p>Design and produce a complete digital social media campaign.</p>
+                </div>
+
+                <div>
+                    <h1>The Solution</h1>
+                    <p>
+                        Create a social media campaign that promotes products from Freedom of Movement. <br>
+                         Using the concept of Freedom of Movement as the the main core of the animation and aesthetic style.
+                        
+                    </p>
+                </div>
+
+                <div>
+                    <h1>The Intended Audience</h1>
+                    <p>
+                        Young adult consumers.
+                    </p>
+                </div>
+            </div>
+
+            <!-- project info right -->
+            <div class="pi-r">
+                <img loading="lazy"  src="/Images/png/fom-mockup.png" alt="">
+            </div>
+
+        </div>
+        <!-- project info end -->
+
+        <!-- facebook start -->
+        <div data-aos="fade-up" class="fb-con">
+
+            <div  class="fb-title-con">
+                <h1>Facebook</h1>
+                <p>Freedom of movement Facebook banner and post mockup. <br><br>
+                    Elements are taken from the overall branding design and correctly resized for Facebook.</p>
+            </div>
+
+            <div class="fb-middle-con">
+                <img loading="lazy"   src="/Images/png/macbook.png" alt="">
+                <div class="fb-video-con" onmouseover="playVideo()" onmouseout="pauseVideo()">
+                    <video preload="none" id="fb-video" poster="/Images/png/poster/facebook.png" controls loop src="/Videos/2/facebook.mp4"></video>
+                </div>
+            </div>
+        </div>
+        <!-- facebook start end-->
+
+        <!-- insta start -->
+        <div  data-aos="fade-up" class="fb-con" id="insta-con">
+
+            <div class="fb-title-con" id="insta-title-con">
+                <h1>Instagram</h1>
+                <p>Freedom of Movement Instagram story videos. <br><br>
+                    These videos where created to expose the Freedom of Movement products.</p>
+            </div>
+
+            <div class="insta-middle-con">
+                <img loading="lazy"  src="/Images/png/phoneOverlay.png" alt="">
+                <div  class="insta-video-con" onmouseover="playVideo2()" onmouseout="pauseVideo2()"> 
+                    <video preload="none" id="insta-vidA" poster="/Images/png/poster/inB.png" loop src="/Videos/2/insta-bag.mp4"></video>
+                </div>
+            </div>
+
+            <div class="insta-rightCon">
+                <img loading="lazy"  src="/Images/png/phoneOverlay.png" alt="">
+                <div  class="insta-video-con" onmouseover="playVideo3()" onmouseout="pauseVideo3()"> 
+                    <video preload="none" id="insta-vidB" poster="/Images/png/poster/inG.png"  loop src="/Videos/2/insta-glasses.mp4"></video>
+                </div>
+            </div>
+
+            <div class="insta-FarrightCon">
+                <img loading="lazy"  src="/Images/png/phoneOverlay.png" alt="">
+                <div  class="insta-video-con" onmouseover="playVideo4()" onmouseout="pauseVideo4()"> 
+                    <video preload="none" id="insta-vidC" poster="/Images/png/poster/inW.png" loop src="/Videos/2/intsa-watch.mp4"></video>
+                </div>
+            </div>
+        </div>
+        <!-- insta start end-->
+
+        <!-- pin start -->
+        <div data-aos="fade-up" class="fb-con" id="pin-con">
+
+            <div class="fb-title-con" id="pin-title-con">
+                <h1>Pinterest</h1>
+                <p>This pinterest banner video is specific to the search results for leather bags. <br><br>
+                    The animation will play along side related product searches in an attempt to entice the consumer.</p>
+            </div>
+
+            <div class="insta-middle-con" id="pin-mid">
+                <img loading="lazy"  src="/Images/png/phoneOverlay.png" alt="">
+                <div  class="insta-video-con" onmouseover="playVideo5()" onmouseout="pauseVideo5()"> 
+                    <video preload="none" id="insta-vidD" poster="/Images/png/poster/pin.png" loop src="/Videos/2/pin.mp4"></video>
+                </div>
+            </div>
+
+        </div>
+        <!-- pin start end-->    
+
+        <!-- tiktok start -->
+        <div data-aos="fade-up" class="fb-con" id="tt-con">
+
+            <div class="fb-title-con" id="tt-title-con">
+                <h1>TikTok</h1>
+                <p>Following the same branding langauge the TikTok platform offers expose for Freedom of Movement to the younger consumer base.</p>
+            </div>
+
+            <div class="insta-middle-con" id="tt-mc">
+                <img loading="lazy"  src="/Images/png/phoneOverlay.png" alt="">
+                <div  class="insta-video-con" onmouseover="playVideo6()" onmouseout="pauseVideo6()"> 
+                    <video preload="none" id="insta-vidE" poster="/Images/png/poster/ttG.png" loop src="/Videos/2/tt-glasses.mp4"></video>
+                </div>
+            </div>
+
+            <div class="insta-rightCon" id="tt-rc">
+                <img loading="lazy"  src="/Images/png/phoneOverlay.png" alt="">
+                <div  class="insta-video-con" onmouseover="playVideo7()" onmouseout="pauseVideo7()"> 
+                    <video preload="none" id="insta-vidF" poster="/Images/png/poster/ttB.png" loop src="/Videos/2/tt-bag.mp4"></video>
+                </div>
+            </div>
+
+            <div class="insta-FarrightCon" id="tt-fc">
+                <img loading="lazy"  src="/Images/png/phoneOverlay.png" alt="">
+                <div  class="insta-video-con" onmouseover="playVideo8()" onmouseout="pauseVideo8()"> 
+                    <video preload="none" id="insta-vidG" poster="/Images/png/poster/ttW.png" loop src="/Videos/2/tt-watch.mp4"></video>
+                </div>
+            </div>
+        </div>
+        <!-- tiktok start end-->    
+        
+        <!-- twitter start -->
+        <div data-aos="fade-up" class="fb-con">
+
+            <div class="fb-title-con">
+                <h1>Twitter</h1>
+                <p>Example of a Freedom of Movement Twitter ad post.</p>
+            </div>
+
+            <div class="fb-middle-con">
+                <img loading="lazy"   src="/Images/png/macbook.png" alt="">
+                <div class="fb-video-con" id="twitter-vid-con" onmouseover="playVideo9()" onmouseout="pauseVideo9()">
+                    <video preload="none" id="twitter-vidA" controls poster="/Images/png/poster/twitter.png" loop src="/Videos/2/twitter.mp4"></video>
+                </div>
+            </div>
+        </div>
+        <!-- twitter end-->
+        
+        <!-- banner start -->
+        <div data-aos="fade-up" class="fb-con" id="gA-con">
+
+            <div class="fb-title-con" id="g-title-con">
+                <h1>Google Ad</h1>
+                <p>Once again another banner add specific to google ad word searches.</p>
+            </div>
+
+            <div class="insta-middle-con" style="margin-top: 0px;">
+                <img loading="lazy"  src="/Images/png/phoneOverlay.png" alt="">
+                <div  class="insta-video-con" onmouseover="playVideo10()" onmouseout="pauseVideo10()"> 
+                    <video preload="none" id="g-vidA" poster="/Images/png/poster/add.png" loop src="/Videos/2/add.mp4"></video>
+                </div>
+            </div>
+
+        </div>
+        <!-- banner end-->  
+        
+        <!-- youtube start -->
+        <div data-aos="fade-up" class="fb-con" id="yt-con">
+
+            <div class="fb-title-con" id="yt-tittle">
+                <h1>Youtube Ad</h1>
+                <p>Freedom of Movement Youtube AD placement mockup videos. <br><br>
+                    These AD will play on family friendly content that is search related.</p>
+            </div>
+
+            <div class="right-video-con">
+                <div class="insta-middle-con" id="yt-mc">
+                    <video preload="none" loop controls poster="/Images/png/poster/ytM.png" src="/Videos/2/yt-mac.mp4"></video>
+                </div>
+    
+                <div class="insta-rightCon" id="yt-rc">
+                    <video preload="none" loop controls poster="/Images/png/poster/ytH.png" src="/Videos/2/yt-hori.mp4"></video>
+                </div>
+    
+                <div class="insta-FarrightCon" id="yt-fc">
+                    <video preload="none" loop controls poster="/Images/png/poster/ytV.png" src="/Videos/2/yt-vert.mp4"></video>
+                </div>
+            </div>
+
+        </div>
+        <!-- youtube end-->     
+        
+        <!-- case study -->
+        <div data-aos="fade-up" class="fb-con" id="case-con">
+
+            <div class="fb-title-con" id="yt-tittle">
+                <h1>Case study</h1>
+                <p>View the Freedom of Movement branding case study to see all the content in action.</p>
+            </div>
+
+            <div class="right-video-con" id="case-study">
+                <div class="insta-middle-con" id="case-mc">
+                    <video preload="none" controls loop poster="/Images/png/poster/c.jpg" src="/Videos/2/casestudy.mp4"></video>
+                </div>
+            </div>
+
+        </div>
+        <!-- case study end -->
+
+        <!-- view more -->
+        <div class="view-more" id="fom-more">
+            <a target="_blank" href="https://lukestephens-2f9c9.web.app/event-two"><h1>view more</h1></a>
+        </div>
+        <!-- view more END -->
+
 </div>
+
+
+
+    <!-- Project3 START -->
+    <div id="project3" class="projects" style="display: none;">
+        <!-- projects header -->
+        <div class="project-header">
+            <!-- project header left button -->
+            <div class="ph-LB" onclick="showProject2(), topFunction(),autoPlay()">
+                <div class="l-button"><i class="fas fa-chevron-left"></i></div>
+            </div>
+            <!-- project left header -->
+            <div class="FM-ph-L" id="insta-ph-l">
+                <div class="ph-L-title" id="insta-title"><h1>Insta Famous</h1></div>
+                <div class="ph-L-subtext">
+                    <p>Personal logo branding animation.</p></div>
+            </div>
+
+            <!-- project right image -->
+            <div class="FM-ph-R" id="insta-ph-r"></div>
+            
+            <!-- project right button -->
+            <div class="ph-RB">
+                <div class="r-button" onclick="showProject4(),autoPlay()"><i class="fas fa-chevron-right"></i></div>
+            </div>
+
+        </div>
+        <!-- project header end -->
+
+
+        <!-- project tags -->
+        <div data-aos="fade-left" class="project-tags" id="in-tags">
+            <p>#SOCIALMEDIA &nbsp #BRANDING &nbsp #ANIMATION</p>
+        </div>
+        <!-- project tags end -->
+
+
+        <!-- project info -->
+        <div data-aos="fade-right" class="project-info">
+            <!-- project info left -->
+            <div class="pi-l">
+
+                <div>
+                    <h1>The Problem</h1>
+                    <p>
+                        As designer it is important to have a visual brand identity that separates your from other designers, Create a unique logo animation for your brand.
+                    </p>
+                </div>
+
+                <div>
+                    <h1>The Brief</h1>
+                    <p>Identify conceptualise, develop and execute a logo and design elements/iconography as part of a self-promotional brand identity.</p>
+                </div>
+
+                <div>
+                    <h1>The Solution</h1>
+                    <p>
+                        The solution was to create a quirky animation that represents me as a person and a designer. <br>
+                        The logo is in the formation of an L and a S which represent my initials in my name.<br>
+                        From which a quirky character was created that represents my identity as a person and personality.
+                    </p>
+                </div>
+
+                <div>
+                    <h1>The Intended Audience</h1>
+                    <p>
+                        All respective ages and those that will be viewing my creative content.
+                    </p>
+                </div>
+            </div>
+
+            <!-- project info right -->
+            <div class="pi-r">
+                <img loading="lazy"  src="/Images/png/logo-mock.png" alt="">
+            </div>
+
+        </div>
+        <!-- project info end -->
+        
+        <!-- idea generation-->
+        <div data-aos="fade-up" class="fb-con" id="insta-con" >
+
+            <div class="fb-title-con" id="in-title-con">
+                <h1>Idea Generation</h1>
+                <p>The idea for the logo design was drawn out on an Ipad. <br><br>
+                    The first conceptual design started off based on the initials of my name L & S. <br><br>
+                    Therefore it took shape into a character that was sketched out.</p>
+            </div>
+
+            <div class="fb-middle-con" id="in-mc">
+                <img loading="lazy"   src="/Images/png/idea-gen.png" alt="">
+            </div>
+            
+        </div>
+        
+        <!-- idea generation END-->
+
+        <!-- process of elimination -->
+        <div data-aos="fade-up" class="fb-con" id="pro-con" >
+
+            <div class="fb-title-con" id="elim-title-con">
+                <h1>Elimination</h1>
+                <p>Process of elimination began once the character had been cleaned up in illustrator. <br><br>
+                    Different aspects of the character where added and remove to make the final design.</p>
+            </div>
+
+            <div class="fb-middle-con" id="elim-mc">
+                <img loading="lazy"   src="/Images/png/elim.png" alt="">
+            </div>
+        </div>
+
+        <div class="fb-con" id="elimS-con" >
+            <div class="fb-middle-con" id="elemS-mc">
+
+                <div class="elim-img-con">
+                    <img src="/Images/png/insta/5.png" alt="">
+                </div>
+                <div class="elim-img-con">
+                    <img src="/Images/png/insta/6.png" alt="">
+                </div>
+                <div class="elim-img-con">
+                    <img src="/Images/png/insta/7.png" alt="">
+                </div>
+                <div class="elim-img-con">
+                    <img src="/Images/png/insta/8.png" alt="">
+                </div>
+                <div class="elim-img-con">
+                    <img src="/Images/png/insta/11.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- process of elimination end -->
+
+
+                <!-- sound design -->
+                <div data-aos="fade-up" class="fb-con" id="in-con">
+
+                    <div class="fb-title-con" id="infm-title-con">
+                        <h1>Sound design</h1>
+                        <p>Sounds were created with the use of abstract objects to create supporting sounds.</p>
+                    </div>
+        
+                    <div class="infm-left-con" id="sound-con">
+                        <div class="insta-middle-con" id="infm-l"> 
+                            <div  class="infm-vid-con" > 
+                                <video preload="none" id="insta-vidA"  poster="/Images/jpg/insta/1.jpg" controls loop src="/Videos/3/1.mp4"></video>
+                            </div>
+                        </div>
+            
+                        <div class="insta-middle-con" id="infm-l"> 
+                            <div  class="infm-vid-con" > 
+                                <video preload="none" id="insta-vidA" poster="/Images/jpg/insta/2.jpg" controls loop src="/Videos/3/2.mp4"></video>
+                            </div>
+                        </div>
+            
+                        <div class="insta-middle-con" id="infm-l"> 
+                            <div  class="infm-vid-con" > 
+                                <video preload="none" id="insta-vidA" poster="/Images/jpg/insta/3.jpg" controls loop src="/Videos/3/3.mp4"></video>
+                            </div>
+                        </div>
+        
+                        <div class="insta-middle-con" id="infm-l"> 
+                            <div  class="infm-vid-con" > 
+                                <video preload="none" id="insta-vidA" poster="/Images/jpg/insta/4.jpg" controls loop src="/Videos/3/4.mp4"></video>
+                            </div>
+                        </div>
+        
+                    </div>
+        
+        
+                </div>
+                <!-- sound design -->
+
+
+        <!-- animation shots-->
+        <div data-aos="fade-up" class="fb-con" id="animS-con" >
+
+            <div class="fb-title-con" id="anim-title-con">
+                <h1>Animation shots</h1>
+                <p>In between animation shots for planning the final movement of the character.</p>
+            </div>
+
+            <div class="fb-middle-con" id="anim-mc">
+                <img src="/Images/png/insta/14.png" alt="">
+                <img src="/Images/png/insta/15.png" alt="">
+                <img src="/Images/png/insta/17.png" alt="">
+                <img src="/Images/png/insta/16.png" alt="">
+            </div>
+        </div>
+
+
+        <!-- final -->
+        <div data-aos="fade-up" class="fb-con" id="final-con" >
+
+            <div class="fb-title-con" id="final-title-con">
+                <h1>Final product</h1>
+                <p>The final animation includes music and supporting sounds to create a fluid animation.</p>
+            </div>
+
+            <div class="fb-middle-con" id="final-mc" > 
+                <video onmouseover="playVideo11()" onmouseout="pauseVideo11()" style="height: auto; width: 70%;" id="i-vidA" preload="none" loop poster="/Images/png/poster/pmock.png" src="/Videos/3/pmock.mp4"></video>
+                <video  style="height: auto; width: 30%;" controls id="i-vidA" preload="none" loop poster="/Images/png/logo-mock.png" src="/Videos/6/final.mp4"></video>
+            </div>
+        </div>
+        <!-- final end -->
+
+
+
+
+       
+
+</div>
+
+
+
+    <!-- Project4 START -->
+    <div id="project4" class="projects" style="display: none;">
+        <!-- projects header -->
+        <div class="project-header">
+            <!-- project header left button -->
+            <div class="ph-LB" onclick="showProject3(), topFunction(),autoPlay()">
+                <div class="l-button"><i class="fas fa-chevron-left"></i></div>
+            </div>
+            <!-- project left header -->
+            <div class="FM-ph-L" id="web-phL">
+                <div class="ph-L-title" id="web-title"><h1>Experimental Website</h1></div>
+                <div class="ph-L-subtext">
+                    <p>An experimental website focusing on the notion of numbers.</p></div>
+            </div>
+
+            <!-- project right image -->
+            <div class="FM-ph-R" id="web-header-right-image"></div>
+            
+            <!-- project right button -->
+            <div class="ph-RB">
+                <div class="r-button" onclick="showProject5(),autoPlay()"><i class="fas fa-chevron-right"></i></div>
+            </div>
+
+        </div>
+        <!-- project header end -->
+
+
+        <!-- project tags -->
+        <div data-aos="fade-left" class="project-tags" id="web-tags">
+            <p>#WEB-DESIGN &nbsp #CODING &nbsp #ANIMATION</p>
+        </div>
+        <!-- project tags end -->
+
+
+        <!-- project info -->
+        <div data-aos="fade-right" class="project-info">
+            <!-- project info left -->
+            <div class="pi-l">
+
+                <div>
+                    <h1>The Problem</h1>
+                    <p>
+                        Find a way to present an interesting concept about numbers to the target audience.
+                    </p>
+                </div>
+
+                <div>
+                    <h1>The Brief</h1>
+                    <p>Use this brief to change the way you think about numbers and fire your audience’s imagination to see the world with fresh eyes. Research and investigate the philosophical and factual elements of numbers and create an engaging experience for your target audience. Work to develop ideas that are not obvious and shine a new light on how numbers intertwine with our lives and give narratives to our experiences, both culturally and theoretically. </p>
+                </div>
+
+                <div>
+                    <h1>The Solution</h1>
+                    <p>
+                       The solution was to make an introspective website about how numbers make me feel as a creative. <br>
+                        The reason being as a creative that I have always felt working with numbers to be uncomfortable and the solution was to find a was to represent this feeling in a creative and accessible manner.
+                    </p>
+                </div>
+
+                <div>
+                    <h1>The Intended Audience</h1>
+                    <p>
+                        Designed for an audience to be taken on a journey through my mind and it's connection towards feelings and numbers.
+                    </p>
+                </div>
+            </div>
+
+            <!-- project info right -->
+            <div class="pi-r" id="web-pi-r">
+                <img loading="lazy"  src="/Images/jpg/1.jpg" alt="">
+            </div>
+
+        </div>
+        <!-- project info end -->
+
+        <!-- case study -->
+        <div data-aos="fade-up" class="fb-con" id="web-con" >
+
+            <div class="fb-title-con" id="web2-title-con">
+                <h1>Case Study</h1>
+                <p>The case study gives a prerecorded experiance of the website along with a narrated explanation.</p>
+            </div>
+
+            <div class="fb-middle-con" id="web-mc">
+                <video preload="none" poster="/Images/jpg/3.png" controls loop src="/Videos/6/webCase.mp4"></video>
+            </div>
+        </div>
+
+        <!-- home page -->
+        <div data-aos="fade-up"  class="fb-con" id="insta-con" >
+
+            <div class="fb-title-con" id="web-title-con">
+                <h1>Home Page</h1>
+                <p>The home page begins with a repetitive animation and sound to set the mood for the website experience.</p>
+            </div>
+
+            <div class="fb-middle-con" id="web-mc">
+                <video preload="none" poster="/Images/jpg/1.jpg" controls loop src="/Videos/6/1.mp4"></video>
+            </div>
+        </div>
+        <!-- home page end -->
+
+        <!-- menu -->
+        <div data-aos="fade-up" class="fb-con" id="web-con" >
+
+            <div class="fb-title-con" id="web2-title-con">
+                <h1>Menu</h1>
+                <p>The menu opens and expands the option to select a chapter.</p>
+            </div>
+
+            <div class="fb-middle-con" id="web-mc">
+                <video preload="none" poster="/Images/jpg/2.png" controls loop src="/Videos/6/2.mp4"></video>
+            </div>
+        </div>
+        <!-- menu end -->
+
+        <!-- about -->
+        <div data-aos="fade-up" class="fb-con" id="insta-con" >
+
+            <div class="fb-title-con" id="web-title-con">
+                <h1>About</h1>
+                <p>The about page gives a brief overview of the experience the user will go through.</p>
+            </div>
+
+            <div class="fb-middle-con" id="web-mc">
+                <video preload="none" poster="/Images/jpg/3.jpg" src="/Videos/6/3.mp4" controls loop></video>
+            </div>
+        </div>
+        <!-- about end -->
+        
+        <!-- positive singularity -->
+        <div data-aos="fade-up" class="fb-con" id="web-con" >
+
+            <div class="fb-title-con" id="web2-title-con">
+                <h1>Positive Singularity</h1>
+                <p>This section represents the positive effect of a singularity within a black hole.</p>
+            </div>
+
+            <div class="fb-middle-con" id="web-mc">
+                <video preload="none" poster="/Images/jpg/4.jpg" src="/Videos/6/4.mp4" controls loop></video>
+            </div>
+        </div>
+        <!-- positive singularity end-->
+
+        <!-- stability of straightness -->
+        <div data-aos="fade-up" class="fb-con" id="insta-con" >
+
+            <div class="fb-title-con" id="web-title-con">
+                <h1>Stability of Straightness</h1>
+                <p>This section is representative of the artists connecting to numbers and how that view is opposed to others.</p>
+            </div>
+
+            <div class="fb-middle-con" id="web-mc">
+                <video preload="none" poster="/Images/jpg/5.jpg" src="/Videos/6/5.mp4" controls loop></video>
+            </div>
+        </div>
+        <!-- stability of straightness -->
+
+        <!-- devine represenatation -->
+        <div data-aos="fade-up" class="fb-con" id="web-con" >
+
+            <div class="fb-title-con" id="web2-title-con">
+                <h1>Devine Representation</h1>
+                <p>This section is linked to the numerical value of 100.</p>
+            </div>
+
+            <div class="fb-middle-con" id="web-mc">
+                <video preload="none" poster="/Images/jpg/6.jpg" src="/Videos/6/6.mp4" controls loop></video>
+            </div>
+        </div>
+        <!-- devine represenatation -->
+
+        <!-- repetivity of infinity -->
+        <div data-aos="fade-up" class="fb-con" id="insta-con" >
+
+            <div class="fb-title-con" id="web-title-con">
+                <h1>Repetivity of Infinity </h1>
+                <p>The repition within this section is relative to the fuild motion that is encapsulated within the numerical value 8.</p>
+            </div>
+
+            <div class="fb-middle-con" id="web-mc">
+                <video preload="none" poster="/Images/jpg/7.jpg" src="/Videos/6/7.mp4" controls loop></video>
+            </div>
+        </div>
+        <!-- repetivity of infinity -->
+
+        <!-- entirety of everything -->
+        <div data-aos="fade-up" class="fb-con" id="web-con" >
+
+            <div class="fb-title-con" id="web2-title-con">
+                <h1>Entirety of Everything.</h1>
+                <p>This section visually represents gravity in terms of the effects and feeling.</p>
+            </div>
+
+            <div class="fb-middle-con" id="web-mc">
+                <video preload="none" poster="/Images/jpg/8.jpg" src="/Videos/6/8.mp4" controls loop></video>
+            </div>
+        </div>
+        <!-- entirety of everything -->
+
+        <!-- launch the website-->
+        <div class="launch-website">
+            <a target="_blank" href="https://experimental-website-96c14.web.app/">
+                <h1>LAUNCH THE WEBSITE</h1>
+            </a>
+            <p>*large file size*</p>
+        </div>
+        <!-- launch the website end-->
+
+        <!-- view more -->
+        <div class="view-more" id="web-more">
+            <a target="_blank" href="https://luestephens.wordpress.com/category/event-3/"><h1>view more</h1></a>
+        </div>
+        <!-- view more END -->
+
+</div>
+
+
+
+    <!-- Project5 START -->
+    <div id="project5" class="projects" style="display: none;">
+        <!-- projects header -->
+        <div class="project-header">
+            <!-- project header left button -->
+            <div class="ph-LB" onclick="showProject4(), topFunction(),autoPlay()">
+                <div class="l-button"><i class="fas fa-chevron-left"></i></div>
+            </div>
+            <!-- project left header -->
+            <div class="FM-ph-L" id="acid-ph-l">
+                <div class="ph-L-title" id="acid-title"><h1>Acid Mage</h1></div>
+                <div class="ph-L-subtext">
+                    <p>An indie plat-former game. </p></div>
+            </div>
+
+            <!-- project right image -->
+            <div class="FM-ph-R" id="acid-header-right-image"></div>
+            
+            <!-- project right button -->
+            <div class="ph-RB">
+                <div class="r-button" onclick="showProject6(),autoPlay()"><i class="fas fa-chevron-right"></i></div>
+            </div>
+
+        </div>
+        <!-- project header end -->
+
+
+        <!-- project tags -->
+        <div data-aos="fade-left" class="project-tags" id="acid-tags">
+            <p>#GAME-DESIGN &nbsp #ANIMATION &nbsp #CODING</p>
+        </div>
+        <!-- project tags end -->
+
+         <!-- project info -->
+         <div data-aos="fade-right" class="project-info">
+            <!-- project info left -->
+            <div class="pi-l" id="acid-pi-l">
+
+                <div>
+                    <h1>The Problem</h1>
+                    <p>
+                        There is a need for new and exciting narratives within the gaming world as large corporations often follow the narrative that is most lucrative. <br>
+
+                        As an indie developer create a functional 2D platformer game that is supported on a strong narrative and that is enjoyable to play.
+                    </p>
+                </div>
+
+                <div>
+                    <h1>The Brief</h1>
+                    <p>Produce a new 2D platformer game franchise with new game goals and game objectives; which is based on traditional principles of a 2D platformer game. <br>
+
+                        Create a custom Hero design for the game including all the required animations for movement. <br> 
+                        
+                        Create custom enemies, collectables, puzzles and environments to complete one playable narrative. <br> 
+                        
+                        Create all the UI elements which include: Title Design, Launch Screen, Menu Screen and a Heads up Display.</p>
+                </div>
+
+                <div>
+                    <h1>The Solution</h1>
+                    <p>
+                        Acid Mage follows the journey of a young girl who has fallen into a bad acid trip. <br>
+
+                        Her inner most emotions now become the game of life as she is tasked to fight her inner demons and ascend from the hell she is stuck in.
+                    </p>
+                </div>
+
+                <div>
+                    <h1>The Intended Audience</h1>
+                    <p>
+                        The game feel is best suited towards controller input and the game mechanics would be adoptable by consumers of all ages while the narrative is targeted towards a teen and up consumer.
+                    </p>
+                </div>
+            </div>
+
+            <!-- project info right -->
+            <div class="pi-r" id="acid-pi-r">
+                <img loading="lazy"  src="/Images/png/acidMage/wallpaper.png" alt="">
+            </div>
+
+        </div>
+        <!-- project info end -->
+
+
+        <!-- project info -->
+        <div data-aos="fade-up" class="project-info" id="acid-info">
+
+            <!-- <div class="main-image">
+                <img src="/Images/png/acidMage/Logo.png" alt="">
+            </div> -->
+            <div class="acid-premise">
+               <div class="Aheader-con">
+                   <div class="red-dot"></div>
+                <h1>The Premise</h1>
+               </div> 
+                <p>Acid Mage is based around a young girl who is stuck in the dark depths of an acid trip. <br><br>
+
+                    Her subconscious has recreated her inner being as a mage. She now exists as a powerful character with abilities to help her fight the darkness… <br> <br>
+                    
+                    Hope is lost, Will she ascend out of the dark depths? <br> <br>
+                    
+                    The character is transported into a level based platformer where mental dexterity and skills are required. <br> <br>
+                    
+                    The character is required to use her new found abilities; to fight off darkness demons and leap from platforms with the hope of existing the grasp of darkness. <br> <br>
+                    </p>
+            </div>
+
+        </div>
+        <!-- project info end -->
+
+        <!-- the brief -->
+        <!-- <div class="theBrief">
+
+            <div class="bTop">
+
+                <div class="bLeft">
+                    <div class="Aheader-con">
+                        <div class="red-dot"></div>
+                     <h1>The Brief</h1>
+                    </div> 
+
+                    <p>Produce a new 2D platformer game franchise with new game goals and game objectives; which is based on traditional principles of a 2D platformer game. <br><br>
+
+                        Create a custom Hero design for the game including all the required animations for movement. <br> <br>
+                        
+                        Create custom enemies, collectables, puzzles and environments to complete one playable narrative. <br> <br>
+                        
+                        Create all the UI elements which include: Title Design, Launch Screen, Menu Screen and a Heads up Display.
+                    </p>
+                </div>
+
+                <div class="bRight">
+                    <div class="Aheader-con">
+                        <div class="red-dot"></div>
+                     <h1>The Problem</h1>
+                    </div> 
+                    <p>There is a need for new and exciting narratives within the gaming world as large corporations often follow the narrative that is most lucrative. <br><br>
+
+                        As an indie developer create a functional 2D platformer game that is supported on a strong narrative and that is enjoyable to play.
+                        </p>
+                </div>
+            </div>
+
+            <div class="bBottom">
+
+                <div class="bLeft">
+                    <div class="Aheader-con">
+                        <div class="red-dot"></div>
+                     <h1>The Solution</h1>
+                    </div> 
+                    <p>Acid Mage follows the journey of a young girl who has fallen into a bad acid trip. <br><br>
+
+                        Her inner most emotions now become the game of life as she is tasked to fight her inner demons and ascend from the hell she is stuck in.
+                        </p>
+                </div>
+
+                <div class="bRight">
+                    <div class="Aheader-con">
+                        <div class="red-dot"></div>
+                     <h1>The Intended Audience</h1>
+                    </div> 
+                    <p>The game feel is best suited towards controller input and the game mechanics would be adoptable by consumers of all ages while the narrative is targeted towards a teen and up consumer.
+                    </p>
+                </div>
+            </div>
+
+        </div> -->
+
+        <!-- the brief end -->
+
+        <!-- background elements -->
+        <div data-aos="fade-up" class="background-elements" id="bkg-elem">
+            <div class="Aheader-con" id="background-header">
+                <div class="red-dot"></div>
+                <h1>Background elements</h1>
+                <p>The background elements were drawn in Photoshop at a 3-6k resolution and layered in unity on the z-index to create a parallax effect.
+                </p>
+            </div>
+
+            <div class="back-video-con">
+                <div class="inner-vid">
+                    <video preload="none" loop class="acid-vid" src="/Videos/4/layers.mp4"></video>
+                    <div class="Acard-title" id="bkg-card-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#background-layers</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- backgorund elemtens end -->
+
+
+        <!-- platform elements -->
+        <div data-aos="fade-up" class="background-elements" id="platform-elements">
+            <div class="Aheader-con" id="background-header">
+                <div class="red-dot"></div>
+                <h1>Platform elements</h1>
+                <p>Platform elements were drawn in Photoshop and are layered in unity.
+                </p>
+            </div>
+
+            <div class="Acards-con">
+                
+                <div class="Acard-con">
+                    <div class="Acard-img">
+                        <img src="/Images/png/acidMage/platforms/1.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#platform-1</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con">
+                    <div class="Acard-img">
+                        <img src="/Images/png/acidMage/platforms/2.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#platform-2</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con">
+                    <div class="Acard-img">
+                        <img src="/Images/png/acidMage/platforms/3.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#platform-3</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con">
+                    <div class="Acard-img">
+                        <img src="/Images/png/acidMage/platforms/4.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#platform-4</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con">
+                    <div class="Acard-img">
+                        <img src="/Images/png/acidMage/platforms/5.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#platform-5</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con">
+                    <div class="Acard-img">
+                        <img src="/Images/png/acidMage/platforms/6.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#platform-6</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con">
+                    <div class="Acard-img">
+                        <img src="/Images/png/acidMage/platforms/7.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#platform-7</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con">
+                    <div class="Acard-img">
+                        <img src="/Images/png/acidMage/platforms/8.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#platform-8</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con">
+                    <div class="Acard-img">
+                        <img src="/Images/png/acidMage/platforms/9.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#platform-9</h1>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div> 
+
+        <!-- platform post -->
+        <div data-aos="fade-up" class="background-elements" id="platform-elements">
+            <div class="Aheader-con" id="background-header">
+                <div class="red-dot"></div>
+                <h1>Platform Post-processing effects</h1>
+                <p>Once the platforms are put into unity they are effected with lighting and particle effects.
+                </p>
+            </div>
+
+            <div class="Acards-con" id="postCard-con">
+                
+                <div class="Acard-con" id="Acard-vid">
+                    <div class="Acard-img" >
+                        <video preload="none" loop class="acid-vid"  src="/Videos/4/plat1.mp4"></video>
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#platform-1</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con" id="Acard-vid">
+                    <div class="Acard-img" >
+                        <video preload="none" loop class="acid-vid"  src="/Videos/4/plat2.mp4"></video>
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#platform-2</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con" id="Acard-vid">
+                    <div class="Acard-img" >
+                        <video preload="none" loop class="acid-vid"  src="/Videos/4/plat3.mp4"></video>
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#platform-3</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con" id="Acard-vid">
+                    <div class="Acard-img" >
+                        <video preload="none" loop class="acid-vid" src="/Videos/4/plat4.mp4"></video>
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#platform-4</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con" id="Acard-vid">
+                    <div class="Acard-img">
+                        <video preload="none" loop class="acid-vid"   src="/Videos/4/plat5.mp4"></video>
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#platform-5</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con" id="Acard-vid">
+                    <div class="Acard-img">
+                        <video preload="none" loop class="acid-vid" src="/Videos/4/plat6.mp4"></video>
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#platform-6</h1>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>  
+
+        <!-- level 1 -->
+        <div data-aos="fade-up" class="background-elements" id="level-elements">
+            <div class="Aheader-con" id="background-header">
+                <div class="red-dot"></div>
+                <h1>Level Design</h1>
+                <p>Level design was drawn out in Photoshop from a large perspective and rescaled in unity in the correct layout.
+                </p>
+            </div>
+
+            <div class="Acards-con" id="postCard-con">
+                
+                <div class="Acard-con" id="Acard-vid">
+                    <div class="Acard-img" >
+                        <video preload="none" loop class="acid-vid"  src="/Videos/4/largeLevel1.mp4"></video>
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#level-1-large</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con" id="Acard-vid">
+                    <div class="Acard-img" >
+                        <video preload="none" loop class="acid-vid"  src="/Videos/4/closeLevel1.mp4"></video>
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#level-1-close</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con" id="Acard-vid">
+                    <div class="Acard-img" >
+                        <video preload="none" loop class="acid-vid"  src="/Videos/4/largeLevel2.mp4"></video>
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#level-2-large</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con" id="Acard-vid">
+                    <div class="Acard-img" >
+                        <video preload="none" class="acid-vid" loop src="/Videos/4/closeLevel2.mp4"></video>
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#level-2-close</h1>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+
+        <!-- The world end -->
+
+        <!-- initial design -->
+            <div data-aos="fade-up" class="background-elements" id="platform-elements">
+                <div class="Aheader-con" id="background-header">
+                    <div class="red-dot"></div>
+                    <h1>Initial Character Design</h1>
+                    <p>The initial characters were drawn and planned in Photoshop.
+                    </p>
+                </div>
+    
+                <div class="Acards-con">
+                    
+                    <div class="Acard-con">
+                        <div class="Acard-img" id="Ccard-img">
+                            <img src="/Images/png/game/character/design/1.png" alt="">
+                        </div>
+                        <div class="Acard-title">
+                            <div class="Aheader-con" id="platform-card-header">
+                                <div class="red-dot"></div>
+                                <h1>#character-outline-1</h1>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="Acard-con">
+                        <div class="Acard-img" id="Ccard-img">
+                            <img src="/Images/png/game/character/design/2.png" alt="">
+                        </div>
+                        <div class="Acard-title">
+                            <div class="Aheader-con" id="platform-card-header">
+                                <div class="red-dot"></div>
+                                <h1>#character-outline-2</h1>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="Acard-con">
+                        <div class="Acard-img" id="Ccard-img">
+                            <img src="/Images/png/game/character/design/3.png" alt="">
+                        </div>
+                        <div class="Acard-title">
+                            <div class="Aheader-con" id="platform-card-header">
+                                <div class="red-dot"></div>
+                                <h1>#character-outline-3</h1>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="Acard-con">
+                        <div class="Acard-img" id="Ccard-img">
+                            <img src="/Images/png/game/character/design/4.png" alt="">
+                        </div>
+                        <div class="Acard-title">
+                            <div class="Aheader-con" id="platform-card-header">
+                                <div class="red-dot"></div>
+                                <h1>#character-outline-4</h1>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="Acard-con"> 
+                        <div class="Acard-img" id="Ccard-img">
+                            <img src="/Images/png/game/character/design/5.png" alt="">
+                        </div>
+                        <div class="Acard-title">
+                            <div class="Aheader-con" id="platform-card-header">
+                                <div class="red-dot"></div>
+                                <h1>#character-outline-5</h1>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="Acard-con">
+                        <div class="Acard-img" id="Ccard-img">
+                            <img src="/Images/png/game/character/design/6.png" alt="">
+                        </div>
+                        <div class="Acard-title">
+                            <div class="Aheader-con" id="platform-card-header">
+                                <div class="red-dot"></div>
+                                <h1>#character-colour-1</h1>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="Acard-con">
+                        <div class="Acard-img" id="Ccard-img">
+                            <img src="/Images/png/game/character/design/7.png" alt="">
+                        </div>
+                        <div class="Acard-title">
+                            <div class="Aheader-con" id="platform-card-header">
+                                <div class="red-dot"></div>
+                                <h1>#character-gradient-1</h1>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="Acard-con">
+                        <div class="Acard-img" id="Ccard-img">
+                            <img src="/Images/png/game/character/design/8.png" alt="">
+                        </div>
+                        <div class="Acard-title">
+                            <div class="Aheader-con" id="platform-card-header">
+                                <div class="red-dot"></div>
+                                <h1>#character-gradient-2</h1>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="Acard-con">
+                        <div class="Acard-img" id="Ccard-img">
+                            <img src="/Images/png/game/character/design/11.png" alt="">
+                        </div>
+                        <div class="Acard-title">
+                            <div class="Aheader-con" id="platform-card-header">
+                                <div class="red-dot"></div>
+                                <h1>#character-gradient-3</h1>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                </div>
+            </div> 
+
+        <!-- final character -->
+        <div data-aos="fade-up" class="background-elements" id="character-final-elements">
+            <div class="Aheader-con" id="background-header">
+                <div class="red-dot"></div>
+                <h1>Final Character Design</h1>
+                <p>The final character was drawn in Photoshop with the pen tool at a 3k resolution
+                </p>
+            </div>
+
+            <div class="Acards-con">
+                
+                <div class="Acard-con" id="CF-con">
+                    <div class="Acard-img" id="Ccard-img">
+                        <img src="/Images/png/game/character/design/9.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#final-character</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con" id="CF-con">
+                    <div class="Acard-img" id="Ccard-img">
+                        <img id="sprite-img" src="/Images/png/game/character/design/10.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#final-character-sprite</h1>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+
+
+        <!-- the enemies -->
+        <div data-aos="fade-up" class="background-elements" id="enemy-elements">
+            <div class="Aheader-con" id="background-header">
+                <div class="red-dot"></div>
+                <h1>Enemy Design</h1>
+                <p>The enemy was drawn in Photoshop at a 3k resolution.
+                </p>
+            </div>
+
+            <div class="Acards-con">
+                
+                <div class="Acard-con" id="enemy-card">
+                    <div class="Acard-img" id="Ccard-img">
+                        <img src="/Images/png/game/enemy/1.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#enemy-frame-1</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con" id="enemy-card">
+                    <div class="Acard-img" id="Ccard-img">
+                        <img src="/Images/png/game/enemy/2.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#enemy-frame-2</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con" id="enemy-card">
+                    <div class="Acard-img" id="Ccard-img">
+                        <img src="/Images/png/game/enemy/3.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#enemy-frame-3</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con" id="enemy-card">
+                    <div class="Acard-img" id="Ccard-img">
+                        <img src="/Images/png/game/enemy/4.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#enemy-frame-4</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con" id="enemy-card"> 
+                    <div class="Acard-img" id="Ccard-img">
+                        <img src="/Images/png/game/enemy/5.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#enemy-frame-5</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Acard-con" id="enemy-card">
+                    <div class="Acard-img" id="Ccard-img">
+                        <img src="/Images/png/game/enemy/6.png" alt="">
+                    </div>
+                    <div class="Acard-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#enemy-frame-6</h1>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- the enemies end-->
+
+        <!-- enemies animation -->
+        <div data-aos="fade-up" class="background-elements" id="enemy-elem">
+            <div class="Aheader-con" id="background-header">
+                <div class="red-dot"></div>
+                <h1>Enemy & Collectable Animations</h1>
+                <p>Both these animations utalise unity's particle system to give them a more effective and authentic look.
+                </p>
+            </div>
+
+            <div class="back-video-con" id="enemy-vid-con">
+
+                <div class="inner-vid" id="enemy-inner-vid">
+
+                    <video preload="none" loop class="acid-vid" src="/Videos/4/enemy.mp4"></video>
+
+                    <div class="Acard-title" id="bkg-card-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#enemy-animation</h1>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+                <div class="inner-vid" id="enemy-inner-vid">
+
+                    <video preload="none" loop class="acid-vid" src="/Videos/4/health.mp4"></video>
+
+                    <div class="Acard-title" id="bkg-card-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#collectable-animation</h1>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        
+
+
+
+
+
+
+        </div>
+
+        <!-- trailer -->
+        <div  class="background-elements" id="bkg-elem">
+            <div class="Aheader-con" id="background-header">
+                <div class="red-dot"></div>
+                <h1>Acid Mage Trailer</h1>
+                <p>The Acid Mage Trailer is meant to give a short introduction to the Acid Mage gameplay.
+                </p>
+            </div>
+
+            <div class="back-video-con">
+                <div class="inner-vid">
+                    <video preload="none" loop poster="/Images/png/acidMage/wallpaper.png" controls src="/Videos/4/trailer.mp4"></video>
+                    <div class="Acard-title" id="bkg-card-title">
+                        <div class="Aheader-con" id="platform-card-header">
+                            <div class="red-dot"></div>
+                            <h1>#acid-mage-trailer</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <!-- view more -->
+        <div class="view-more" id="acid-more">
+            <a target="_blank" href="https://luestephens.wordpress.com/category/event-4/"><h1>view more</h1></a>
+        </div>
+
+    </div>
+
+
+
+    <!-- Project6 START -->
+    <div id="project6" class="projects" style="display: none;">
+        <!-- projects header -->
+        <div class="project-header">
+            <!-- project header left button -->
+            <div class="ph-LB" onclick="showProject5(), topFunction(),autoPlay()">
+                <div class="l-button"><i class="fas fa-chevron-left"></i></div>
+            </div>
+            <!-- project left header -->
+            <div class="FM-ph-L" id="deso-ph-l">
+                <div class="ph-L-title" id="desolation-title"><h1>Desolation Diaries</h1></div>
+                <div class="ph-L-subtext">
+                    <p>A collective short film created by the multimedia class of 2020.</p></div>
+            </div>
+
+            <!-- project right image -->
+            <div class="FM-ph-R" id="deso-header-right-image"></div>
+            
+            <!-- project right button -->
+            <div class="ph-RB">
+                <div class="r-button" onclick="showProject7(),autoPlay()"><i class="fas fa-chevron-right"></i></div>
+            </div>
+
+        </div>
+        <!-- project header end -->
+
+
+        <!-- project tags -->
+        <div data-aos="fade-left" class="project-tags" id="deso-tags">
+            <p>#SHORT-FILM &nbsp #ANIMATION</p>
+        </div>
+        <!-- project tags end -->
+
+
+        <!-- project info -->
+        <div data-aos="fade-right" class="project-info">
+            <!-- project info left -->
+            <div class="pi-l">
+
+                <div>
+                    <h1>The Problem</h1>
+                    <p>
+                        This year we had to literally rethink everything we
+                        do as homosapiens, from being together in a classroom to now producing a film from the confines of our
+                        own homes/flats. It has been challenging to say the
+                        least, but we are now on the precipice of rethinking humanity - and with this project, you as young individual will have the opportunity to tell your COVID-19 story.
+                    </p>
+                </div>
+
+                <div>
+                    <h1>The Brief</h1>
+                    <p>As a class group each create a unique short film using your preferred media of choice that tells a narrative around the theme of desolation.</p>
+                </div>
+
+                <div>
+                    <h1>The Solution</h1>
+                    <p>
+                       The solution to this film project was a short piece titled The Great Lockdown, which follows the narrative of Lugando. A young man who has just received news of the nation wide Lockdown. 
+                    </p>
+                </div>
+
+                <div>
+                    <h1>The Intended Audience</h1>
+                    <p>
+                       The short film is targeted towards a young adult audience as it makes some adult comedic references.
+                    </p>
+                </div>
+            </div>
+
+            <!-- project info right -->
+            <div class="pi-r" id="deso-pi-r">
+                <img loading="lazy"  src="/Images/png/desolation.png" alt="">
+            </div>
+
+        </div>
+        <!-- project info end -->
+
+        <!-- meet the team -->
+        <div data-aos="fade-up" class="title-con" id="deso-title-con">
+            <div class="title-header" id="deso-header">
+                <h1>OOF Production House</h1>
+            </div>
+
+            <div class="p-whiteout" id="deso-whiteout"></div>
+            <div class="bluebar" id="deso-bluebar"></div>
+        </div>
+
+        <!-- team con -->
+        <div data-aos="fade-up" class="team-con">
+
+            <div class="team-card" id="wessie-card">
+                <img loading="lazy"  src="/Images/jpg/team/wessie.jpg" alt="">
+                <div class="wessie-info-con">
+                    <h1>Wessie</h1>
+                    <p> 
+                        <b>Executive Producer / Lecturer</b> <br> <br>
+                            Wessie is the fantastic mind that has lead the multimedia class of 2020. <br> <br>
+                            He has been huge benefit to my personal development as a student and as a creative. 
+                            A person who is truly compassionate about his students.
+
+                      </p>
+                </div>
+
+            </div>
+
+            <div class="team-card">
+                <img loading="lazy"  src="/Images/jpg/team/anton.jpg" alt="">
+                <h1>Anton 
+                    <a id="web" target="_blank" href="https://anton-gollia-portfolio.web.app/">
+                        <i  class="fas fa-globe"></i>
+                    </a> 
+                </h1>
+                <p>Producer.</p>
+            </div>
+
+            <div class="team-card">
+                <img loading="lazy"  src="/Images/jpg/team/susan.jpg" alt="">
+                <h1>Susan 
+                    <a id="web" target="_blank" href="http://www.susanvdwest.co.za">
+                        <i  class="fas fa-globe"></i>
+                    </a> 
+                </h1>
+                <p>Assistant Producer.</p>
+            </div>
+
+            <div class="team-card">
+                <img loading="lazy"  src="/Images/jpg/team/wessel.jpg" alt="">
+                <h1>Wessel 
+                    <a id="web" target="_blank" href="http://wesselbreunissen.co.za">
+                        <i  class="fas fa-globe"></i>
+                    </a> 
+                </h1>
+                <p>D.O.P & Key Grip.</p>
+            </div>
+
+            <div class="team-card">
+                <img loading="lazy"  src="/Images/jpg/team/luke.jpg" alt="">
+                <h1>Luke 
+                    <a id="web" target="_blank" href="https://lukestephens.co.za">
+                        <i  class="fas fa-globe"></i>
+                    </a> 
+                </h1>
+                <p>D.O.P & Key Grip.</p>
+            </div>
+
+            <div class="team-card">
+                <img loading="lazy"  src="/Images/jpg/team/wiehan.jpg" alt="">
+                <h1>Wiehan 
+                    <a id="web" target="_blank" href="https://wiehanvermeulen.co.za/">
+                        <i  class="fas fa-globe"></i>
+                    </a> 
+                </h1>
+                <p>Grip and Technical Engineer.</p>
+            </div>
+
+            <div class="team-card">
+                <img loading="lazy"  src="/Images/jpg/team/jared.jpg" alt="">
+                <h1>Jared 
+                    <a id="web" target="_blank" href="http://www.jaredlaggar.co.za/">
+                        <i  class="fas fa-globe"></i>
+                    </a> 
+                </h1>
+                <p>Marketing and Promotion.</p>
+            </div>
+
+            <div class="team-card">
+                <img loading="lazy"  src="/Images/jpg/team/chey.jpg" alt="">
+                <h1>Cheyenne 
+                    <a id="web" target="_blank" href="https://atelierferna.com/">
+                        <i  class="fas fa-globe"></i>
+                    </a> 
+                </h1>
+                <p>Marketing and Promotion.</p>
+            </div>
+
+            <div class="team-card">
+                <img loading="lazy"  src="/Images/jpg/team/tamsyn.jpg" alt="">
+                <h1>Tamsyn 
+                    <a id="web" target="_blank" href="https://anton-gollia-portfolio.web.app/">
+                        <i  class="fas fa-globe"></i>
+                    </a> 
+                </h1>
+                <p>Animation.</p>
+            </div>
+
+            <div class="team-card">
+                <img loading="lazy"  src="/Images/jpg/team/tyla.jpg" alt="">
+                <h1>Tyla 
+                    <a id="web" target="_blank" href="">
+                        <i  class="fas fa-globe"></i>
+                    </a> 
+                </h1>
+                <p>Animation and Art Direction.</p>
+            </div>
+
+            <div class="team-card">
+                <img loading="lazy"  src="/Images/jpg/team/bean.jpg" alt="">
+                <h1>Angelina 
+                    <a id="web" target="_blank" href="http://awicastudios.co.za/">
+                        <i  class="fas fa-globe"></i>
+                    </a> 
+                </h1>
+                <p>Creative Director.</p>
+            </div>
+
+            <div class="team-card">
+                <img loading="lazy"  src="/Images/jpg/team/nina.jpg" alt="">
+                <h1>Nina 
+                    <a id="web" target="_blank" href="http://www.ninaroodbol.co.za/">
+                        <i  class="fas fa-globe"></i>
+                    </a> 
+                </h1>
+                <p>Creative Director.</p>
+            </div>
+
+            <div class="team-card">
+                <img loading="lazy"  src="/Images/jpg/team/josh.jpg" alt="">
+                <h1>Josh 
+                    <a id="web" target="_blank" href="http://www.joshpaul.co.za/">
+                        <i  class="fas fa-globe"></i>
+                    </a> 
+                </h1>
+                <p>Sound Design.</p>
+            </div>
+
+        </div>
+        <!-- meet the team end-->
+
+
+        <!-- story boarding -->
+        <div data-aos="fade-up" class="title-con" id="deso-title-con">
+            <div class="title-header" id="deso-header">
+                <h1>Story Boarding</h1>
+            </div>
+
+            <div class="p-whiteout"></div>
+            <div class="bluebar" id="deso-bluebar"></div>
+        </div>
+
+        <div data-aos="fade-up" class="story-con">
+            <div class="frame-con">
+                <img loading="lazy"  src="/Images/png/storyboard/1.png" alt="">
+            </div>
+            <div class="frame-con">
+                <img loading="lazy"  src="/Images/png/storyboard/2.png" alt="">
+            </div>
+            <div class="frame-con">
+                <img loading="lazy"  src="/Images/png/storyboard/3.png" alt="">
+            </div>
+            <div class="frame-con">
+                <img loading="lazy"  src="/Images/png/storyboard/4.png" alt="">
+            </div>
+            <div class="frame-con">
+                <img loading="lazy"  src="/Images/png/storyboard/5.png" alt="">
+            </div>
+            <div class="frame-con">
+                <img loading="lazy"  src="/Images/png/storyboard/6.png" alt="">
+            </div>
+            <div class="frame-con">
+                <img loading="lazy"  src="/Images/png/storyboard/7.png" alt="">
+            </div>
+            <div class="frame-con">
+                <img loading="lazy"  src="/Images/png/storyboard/8.png" alt="">
+            </div>
+            <div class="frame-con">
+                <img loading="lazy"  src="/Images/png/storyboard/9.png" alt="">
+            </div>
+            <div class="frame-con">
+                <img loading="lazy"  src="/Images/png/storyboard/10.png" alt="">
+            </div>
+            <div class="frame-con">
+                <img loading="lazy"  src="/Images/png/storyboard/11.png" alt="">
+            </div>
+            <div class="frame-con">
+                <img loading="lazy"  src="/Images/png/storyboard/12.png" alt="">
+            </div>
+        </div>
+        <!-- story boarding end -->
+
+        <!-- shots to create set -->
+        <div data-aos="fade-up" class="title-con" id="deso-title-con">
+            <div class="title-header" id="deso-header">
+                <h1>Images for set design</h1>
+            </div>
+
+            <div class="p-whiteout" id="deso-whiteout"></div>
+            <div class="bluebar" id="deso-bluebar"></div>
+        </div>
+
+        <div data-aos="fade-up" class="story-con" id="set-con">
+            <div class="set-img-con">
+                <img loading="lazy"  src="/Images/jpg/set/1.jpg" alt="">
+            </div>
+            <div class="set-img-con">
+                <img loading="lazy"  src="/Images/jpg/set/2.jpg" alt="">
+            </div>
+            <div class="set-img-con">
+                <img loading="lazy"  src="/Images/jpg/set/3.jpg" alt="">
+            </div>
+            <div class="set-img-con">
+                <img loading="lazy"  src="/Images/jpg/set/4.jpg" alt="">
+            </div>
+            <div class="set-img-con">
+                <img loading="lazy"  src="/Images/jpg/set/5.jpg" alt="">
+            </div>
+            <div class="set-img-con">
+                <img loading="lazy"  src="/Images/jpg/set/6.jpg" alt="">
+            </div>
+        </div>
+        <!-- shots to create set end-->
+
+        <!-- set design -->
+        <div data-aos="fade-up" class="title-con" id="deso-title-con">
+            <div class="title-header" id="deso-header">
+                <h1>Set Design</h1>
+            </div>
+
+            <div class="p-whiteout"></div>
+            <div class="bluebar" id="deso-bluebar"></div>
+        </div>
+
+            <div data-aos="fade-up" class="story-con" id="back-con">
+                <div class="set-img-con" id="bkg-con">
+                    <img loading="lazy"  src="/Images/jpg/background/1.png" alt="">
+                </div>
+                <div class="set-img-con" id="bkg-con">
+                    <img loading="lazy"  src="/Images/jpg/background/2.png" alt="">
+                </div>
+                <div class="set-img-con" id="bkg-con">
+                    <img loading="lazy"  src="/Images/jpg/background/3.png" alt="">
+                </div>
+
+        </div>
+        <!-- set design end -->
+
+        <!-- character design -->
+        <div data-aos="fade-up" class="title-con" id="deso-title-con">
+            <div class="title-header" id="deso-header">
+                <h1>Character Design</h1>
+            </div>
+
+            <div class="p-whiteout" id="deso-whiteout"></div>
+            <div class="bluebar" id="deso-bluebar"></div>
+        </div>
+
+        <div data-aos="fade-up" class="story-con" id="character-con">
+            <div class="set-img-con" id="character-img-con">
+                <img loading="lazy"  src="/Images/png/character/hold.png" alt="">
+            </div>
+            <div class="set-img-con" id="character-img-con">
+                <img loading="lazy"  src="/Images/png/character/sit.png" alt="">
+            </div>
+            <div class="set-img-con" id="character-img-con">
+                <img loading="lazy"  src="/Images/png/character/stand.png" alt="">
+            </div>
+        </div>
+        <!-- character design end -->
+
+        <!-- mouth design -->
+        <div data-aos="fade-up" class="title-con" id="deso-title-con">
+            <div class="title-header" id="deso-header">
+                <h1>Mouth Design</h1>
+            </div>
+
+            <div class="p-whiteout"></div>
+            <div class="bluebar" id="deso-bluebar"></div>
+        </div>
+
+        <div data-aos="fade-up" class="story-con" id="mouth-con">
+            <div class="set-img-con" id="mouth-img-con">
+                <img loading="lazy"  src="/Images/png/mouth/1.png" alt="">
+            </div>
+            <div class="set-img-con" id="mouth-img-con">
+                <img loading="lazy"  src="/Images/png/mouth/2.png" alt="">
+            </div>
+            <div class="set-img-con" id="mouth-img-con">
+                <img loading="lazy"  src="/Images/png/mouth/3.png" alt="">
+            </div>
+            <div class="set-img-con" id="mouth-img-con">
+                <img loading="lazy"  src="/Images/png/mouth/4.png" alt="">
+            </div>
+            <div class="set-img-con" id="mouth-img-con">
+                <img loading="lazy"  src="/Images/png/mouth/5.png" alt="">
+            </div>
+            <div class="set-img-con" id="mouth-img-con">
+                <img loading="lazy"  src="/Images/png/mouth/6.png" alt="">
+            </div>
+            <div class="set-img-con" id="mouth-img-con">
+                <img loading="lazy"  src="/Images/png/mouth/7.png" alt="">
+            </div>
+            <div class="set-img-con" id="mouth-img-con">
+                <img loading="lazy"  src="/Images/png/mouth/8.png" alt="">
+            </div>
+            <div class="set-img-con" id="mouth-img-con">
+                <img loading="lazy"  src="/Images/png/mouth/9.png" alt="">
+            </div>
+            <div class="set-img-con" id="mouth-img-con">
+                <img loading="lazy"  src="/Images/png/mouth/12.png" alt="">
+            </div>
+            <div class="set-img-con" id="mouth-img-con">
+                <img loading="lazy"  src="/Images/png/mouth/13.png" alt="">
+            </div>
+            <div class="set-img-con" id="mouth-img-con">
+                <img loading="lazy"  src="/Images/png/mouth/14.png" alt="">
+            </div>
+
+        </div>
+        <!-- mouth design end-->
+
+        <!-- cover art -->
+        <div data-aos="fade-up" class="title-con" id="deso-title-con">
+            <div class="title-header" id="deso-header">
+                <h1>Cover & Title Screens</h1>
+            </div>
+
+            <div class="p-whiteout" id="deso-whiteout"></div>
+            <div class="bluebar" id="deso-bluebar"></div>
+        </div>
+
+        <div data-aos="fade-up" class="story-con" id="cover-con">
+
+            <div class="story-left">
+                <div class="set-img-con" id="main-cover-img-con">
+                    <img loading="lazy"  src="/Images/png/cover/1.png" alt="">
+                </div>
+            </div>
+
+            <div class="story-left">
+                <div class="set-img-con" id="cover-img-con">
+                    <img loading="lazy"  src="/Images/png/cover/2.jpg" alt="">
+                </div>
+                <div class="set-img-con" id="cover-img-con">
+                    <img loading="lazy"  src="/Images/png/cover/3.jpg" alt="">
+                </div>
+                <div class="set-img-con" id="cover-img-con">
+                    <img loading="lazy"  src="/Images/png/cover/4.jpg" alt="">
+                </div>
+            </div>
+
+
+        </div>
+        <!-- cover art end -->
+
+        <!-- final short -->
+        <div class="title-con" id="deso-title-con">
+            <div class="title-header" id="deso-header">
+                <h1>Animation Short</h1>
+            </div>
+
+            <div class="p-whiteout"></div>
+            <div class="bluebar" id="deso-bluebar"></div>
+        </div>
+
+        <video preload="none" id="final-animation" controls poster="/Images/png/cover/2.jpg" style="width: 90%; height: auto;" src="/Videos/5/small.mp4"></video>
+        <!-- final short end -->
+
+        <!-- final -->
+        <div class="title-con" id="deso-title-con">
+            <div class="title-header" id="deso-header">
+                <h1>Final Film</h1>
+            </div>
+
+            <div class="p-whiteout"></div>
+            <div class="bluebar" id="deso-bluebar"></div>
+        </div>
+
+        <video preload="none" id="final-animation" controls poster="/Images/png//desolation.png" style="width: 90%; height: auto;" src="/Videos/5/final.mp4"></video>
+        <!-- final end -->
+
+        <!-- view more -->
+        <div class="view-more" id="deso-view-more">
+            <a target="_blank" href="https://luestephens.wordpress.com/category/event-5/"><h1>view more</h1></a>
+        </div>
+        <!-- view more END -->
+
+</div>
+
+    <!-- Project7 START -->
+    <div id="project7" class="projects" style="display: none;">
+        <!-- projects header -->
+        <div class="project-header">
+            <!-- project header left button -->
+            <div class="ph-LB" onclick="showProject6(), topFunction(),autoPlay()">
+                <div class="l-button"><i class="fas fa-chevron-left"></i></div>
+            </div>
+            <!-- project left header -->
+            <div class="FM-ph-L" id="b-ph-l">
+                <div class="ph-L-title" id="blinki-title"><h1>The Blinki and Sqeeki Show</h1></div>
+                <div class="ph-L-subtext">
+                    <p>A 2019 short animation film.</p></div>
+            </div>
+
+            <!-- project right image -->
+            <div class="FM-ph-R" id="b-header-right-image"></div>
+            
+            <!-- project right button -->
+            <div class="ph-RB">
+                <div class="r-button" onclick="showProject8(),autoPlay()"><i class="fas fa-chevron-right"></i></div>
+            </div>
+
+        </div>
+        <!-- project header end -->
+
+
+        <!-- project tags -->
+        <div data-aos="fade-left" class="project-tags" id="b-tags">
+            <p>#ANIMATION &nbsp #SHORT #2019</p>
+        </div>
+        <!-- project tags end -->
+
+
+        <!-- project info -->
+        <div data-aos="fade-right" class="project-info">
+            <!-- project info left -->
+            <div class="pi-l">
+
+                <div>
+                    <h1>The Problem</h1>
+                    <p>
+                        Create a short film based on any narrative and execute this animation in After Effects.
+                    </p>
+                </div>
+
+                <div>
+                    <h1>The Brief</h1>
+                    <p>Utalise your design application to create characters along with a walk and run cycle while developing a complete storyline. </p>
+                </div>
+
+                <div>
+                    <h1>The Solution</h1>
+                    <p>
+                        The solution was to create a short comedic film that was based on the auditions to Adventure Time. <br>
+                        Blinki and Sqeeki wake up one morning late for their audition to join the Adventure Time cast, an adventure follows.
+                    </p>
+                </div>
+
+                <div>
+                    <h1>The Intended Audience</h1>
+                    <p>
+                        Young teenagers and fans of Adventure time.
+                    </p>
+                </div>
+            </div>
+
+            <!-- project info right -->
+            <div class="pi-r" id="blink-pi-r">
+                <img loading="lazy"  src="/Images/png/blinki.png" alt="">
+            </div>
+
+        </div>
+        <!-- project info end -->
+
+        <!-- animations -->
+        <div data-aos="fade-up" class="title-con">
+            <div class="title-header" id="anim-header">
+                <h1>Animations</h1>
+            </div>
+
+            <div class="p-whiteout"></div>
+            <div class="bluebar" id="anim-bluebar"></div>
+        </div>
+<!-- walk cycle -->
+        <div data-aos="fade-up" class="fb-con" id="walk-con" >
+
+            <div class="fb-title-con" id="walk-title-con">
+                <h1>Walk Cycle</h1>
+                <p>A walk cycle was created for both characters in after effects using the Duik plugin.</p>
+            </div>
+
+            <div class="walk-con">
+                <video preload="none" class="blinki-vid" loop src="/Videos/7/bwalk.mp4"></video>
+            </div>
+
+            
+            <div class="walk-con">
+                <video preload="none" class="blinki-vid" loop src="/Videos/7/swalk.mp4"></video>
+            </div>
+
+        </div>
+
+<!-- run cycle -->
+<div data-aos="fade-up" class="fb-con" id="walk-con" >
+
+    <div class="fb-title-con" id="walk-title-con">
+        <h1>Run Cycle</h1>
+        <p>The run cycle followed the same pattern as the walk cycle although with Blinki and his long limbs it was challenging to create a convincing run cycle as a second year student.</p>
+    </div>
+
+    <div class="walk-con">
+        <video preload="none" class="blinki-vid" loop  src="/Videos/7/brun.mp4"></video>
+    </div>
+
+    
+    <div class="walk-con">
+        <video preload="none" class="blinki-vid" loop  src="/Videos/7/srun.mp4"></video>
+    </div>
+
+</div>
+        <!-- animations end -->
+
+
+        <!-- backgrounds -->
+        <div data-aos="fade-up" class="title-con">
+            <div class="title-header" id="anim-header">
+                <h1>Backgrounds</h1>
+            </div>
+
+            <div class="p-whiteout"></div>
+            <div class="bluebar" id="anim-bluebar"></div>
+        </div>
+
+        <div data-aos="fade-up" class="background-con">
+            <div class="b-img-con">
+                <img loading="lazy"  src="/Images/png/backgrounds/1.png" alt="">
+            </div>
+            <div class="b-img-con">
+                <img loading="lazy"  src="/Images/png/backgrounds/2.png" alt="">
+            </div>
+            <div class="b-img-con">
+                <img loading="lazy"  src="/Images/png/backgrounds/3.png" alt="">
+            </div>
+            <div class="b-img-con">
+                <img loading="lazy"  src="/Images/png/backgrounds/4.png" alt="">
+            </div>
+            <div class="b-img-con">
+                <img loading="lazy"  src="/Images/png/backgrounds/5.png" alt="">
+            </div>
+            <div class="b-img-con">
+                <img loading="lazy"  src="/Images/png/backgrounds/6.png" alt="">
+            </div>
+        </div>
+        <!-- backgrounds end -->
+
+        <!-- post -->
+        <div data-aos="fade-up" class="title-con">
+            <div class="title-header" id="anim-header">
+                <h1>Post Processing</h1>
+            </div>
+
+            <div class="p-whiteout"></div>
+            <div class="bluebar" id="anim-bluebar"></div>
+        </div>
+
+        <div data-aos="fade-up" class="background-con">
+            <div class="b-img-con">
+                <img loading="lazy"  src="/Images/png/post/7.png" alt="">
+            </div>
+            <div class="b-img-con">
+                <img loading="lazy"  src="/Images/png/post/2.png" alt="">
+            </div>
+            <div class="b-img-con">
+                <img loading="lazy"  src="/Images/png/post/3.png" alt="">
+            </div>
+            <div class="b-img-con">
+                <img loading="lazy"  src="/Images/png/post/4.png" alt="">
+            </div>
+            <div class="b-img-con">
+                <img loading="lazy"  src="/Images/png/post/5.jpg" alt="">
+            </div>
+            <div class="b-img-con">
+                <img loading="lazy"  src="/Images/png/post/8.png" alt="">
+            </div>
+        </div>
+        <!-- post end -->
+
+        <!-- short scenes -->
+        <div data-aos="fade-up" class="title-con">
+            <div class="title-header" id="anim-header">
+                <h1>Animation Examples</h1>
+            </div>
+
+            <div class="p-whiteout" id="animE-title"></div>
+            <div class="bluebar" id="anim-bluebar"></div>
+        </div>
+
+        <div data-aos="fade-up" class="background-con" id="anim-b-con">
+            <div class="b-vid-con">
+                <video preload="none" poster="/Images/jpg/blinki/1.jpg" controls loop src="/Videos/7/clock.mp4"></video>
+            </div>
+
+            <div class="b-vid-con">
+                <video preload="none" poster="/Images/jpg/blinki/2.jpg" controls loop src="/Videos/7/landscape.mp4"></video>
+            </div>
+
+            <div class="b-vid-con">
+                <video preload="none" poster="/Images/jpg/blinki/3.jpg" controls loop src="/Videos/7/outside.mp4"></video>
+            </div>
+
+            <div class="b-vid-con">
+                <video preload="none" poster="/Images/jpg/blinki/4.png" controls loop src="/Videos/7/scream.mp4"></video>
+            </div>
+        </div>
+        <!-- short scenes -->
+
+        <!-- final -->
+        <div class="title-con">
+            <div class="title-header" id="anim-header">
+                <h1>Final Animation</h1>
+            </div>
+
+            <div class="p-whiteout"></div>
+            <div class="bluebar" id="anim-bluebar"></div>
+        </div>
+
+        <video preload="none" poster="/Images/jpg/blinki/5.jpg" controls style="width: 90%; height: auto; border-radius: 15px;" src="/Videos/7/final.mp4"></video>
+
+        <!-- final end -->
+    </div>
+
+
+    <!-- Project8 START -->
+    <div id="project8" class="projects" style="display: none;">
+        <!-- projects header -->
+        <div class="project-header">
+            <!-- project header left button -->
+            <div class="ph-LB" onclick="showProject7(), topFunction(),autoPlay()">
+                <div class="l-button"><i class="fas fa-chevron-left"></i></div>
+            </div>
+            <!-- project left header -->
+            <div class="FM-ph-L" id="showreel-l">
+                <div class="ph-L-title" id="show-title"><h1>2020 Show Reel</h1></div>
+                <div class="ph-L-subtext">
+                    <p>A collective animation of my 2020 work.</p></div>
+            </div>
+
+            <!-- project right image -->
+            <div class="FM-ph-R" id="showreel-header-right-image"></div>
+            
+            <!-- project right button -->
+            <div class="ph-RB">
+                <div class="r-button" onclick="showProject1(),autoPlay()"><i class="fas fa-chevron-right"></i></div>
+            </div>
+
+        </div>
+        <!-- project header end -->
+
+
+        <!-- project tags -->
+        <div class="project-tags" id="showreel-tags">
+            <p>#ANIMATION &nbsp #SHOWREEL</p>
+        </div>
+        <!-- project tags end -->
+
+
+        <!-- video -->
+        <div class="showreel-con">
+            <div class="showreel">
+                <video preload="none" controls  poster="/Images/jpg/showreel.png" src="/Videos/8/showreel.mp4"></video>
+            </div>
+        </div>
+
+
+
+
+
+</div>
+
+
+    <!-- about section -->
+
+    <div class="about" id="about">
+        <div class="about-l">
+            <div class="about-img">
+                <img src="/Images/png/luke.png" alt="">
+            </div>
+            <h1>Hi, I am Luke.</h1>
+            <p>My degree at the Stellenbosch Academy of Design and Photography has taught me that I have a strong suit for problem solving and thus have really enjoyed the more complex aspects of our projects such as our large animation briefs as well as web, app and game design projects. <br><br>
+                Through work experience and academy projects I was introduced to the topic of user experience. Which for me, is the current career path I am interested in venturing into. The reason being that I have found myself to be infatuated with the idea of understating how people experience the world around them and how we as creatives can better those experiences through problem solving. <br><br>
+                Thank you for viewing my portfolio! <br><br> If you think I would be a valuable asset to your team, please feel free to contact me.</p>
+        </div>
+    </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+<script src="/js/blocks.js"></script>
+<script src="/js/followmouse.js"></script>
+<script src="/js/animationPlayer.js" type="text/javascript"></script>
+<script src="/js/videoplay.js" type="text/javascript"></script>
+<script src="/js/autoplay.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+<script src="/js/contact.js"></script>
+
+
 </body>
 </html>

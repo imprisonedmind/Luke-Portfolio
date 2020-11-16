@@ -1,0 +1,126 @@
+#blinki-title {
+  font-size: 30px;
+}
+
+#b-ph-l {
+  background-color: #2BC383;
+}
+
+#blink-pi-r img {
+  height: 100%;
+  width: auto;
+}
+
+#b-header-right-image {
+  background-image: url(/Images/png/blinki-logo.png);
+  background-color: #2BC383;
+}
+
+#b-tags {
+  color: #2BC383;
+}
+
+#anim-header h1 {
+  color: #2BC383;
+  margin-top: -50px;
+}
+
+#anim-bluebar {
+  width: 90%;
+  background-color: #2BC383;
+}
+
+#walk-con {
+  height: 500px;
+}
+
+#walk-title-con {
+  width: 20%;
+}
+
+#walk-title-con h1 {
+  width: 100%;
+  margin: 0;
+  font-size: 50px;
+  border-bottom: none;
+}
+
+.walk-con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 35%;
+}
+
+.walk-con video {
+  height: auto;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.background-con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 680px;
+  width: 90%;
+  overflow: hidden;
+}
+
+#anim-b-con {
+  height: 980px;
+}
+
+.b-img-con {
+  height: 50%;
+  width: 30%;
+}
+
+.b-img-con img {
+  height: auto;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.b-img-con video {
+  height: auto;
+  width: 100%;
+  border-radius: 15px;
+}
+
+#animE-title {
+  width: 800px;
+}
+
+.b-vid-con {
+  height: 48%;
+  width: 45%;
+}
+
+.b-vid-con video {
+  height: auto;
+  width: 100%;
+  border-radius: 15px;
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  #walk-title-con h1 {
+    font-size: 40px;
+  }
+}
+/*# sourceMappingURL=blinki.css.map */
