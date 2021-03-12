@@ -305,8 +305,13 @@
 }
 
 #deso-pi-r img {
+<<<<<<< Updated upstream
   height: auto;
   width: 130%;
+=======
+  height: 100%;
+  width: auto;
+>>>>>>> Stashed changes
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
